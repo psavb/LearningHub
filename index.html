@@ -1,0 +1,1616 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PS AVB Learning Hub – Abacus, Vedic Math & Brain Gym for Kids</title>
+
+  <!-- SEO Meta -->
+  <meta name="description" content="PS AVB Learning Hub offers expert Abacus, Vedic Math, and Brain Gym programs for children aged 5–17. Enroll now and sharpen your child's mental arithmetic skills!" />
+  <meta name="keywords" content="abacus classes, vedic math, brain gym, mental arithmetic, kids learning, PS AVB Learning Hub, math for kids, abacus training" />
+  <meta name="author" content="PS AVB Learning Hub" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+  <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
+
+  <!-- Open Graph (WhatsApp / Social sharing) -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:title"       content="PS AVB Learning Hub – Abacus, Vedic Math & Brain Gym" />
+  <meta property="og:description" content="Sharpen Young Minds with Abacus, Vedic Math & Brain Gym. Enroll your child today!" />
+  <meta property="og:url"         content="https://psavblearninghub.com/" />
+  <meta property="og:image"       content="https://psavblearninghub.com/og-image.jpg" />
+  <meta property="og:site_name"   content="PS AVB Learning Hub" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="PS AVB Learning Hub – Abacus, Vedic Math & Brain Gym" />
+  <meta name="twitter:description" content="Enroll your child in expert Abacus, Vedic Math & Brain Gym classes!" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            inter:   ['Inter', 'sans-serif'],
+            poppins: ['Poppins', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              blue:   '#1e40af',
+              green:  '#16a34a',
+              orange: '#ea580c',
+            }
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Schema.org LocalBusiness JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "PS AVB Learning Hub",
+    "description": "Expert Abacus, Vedic Math, and Brain Gym programs for children aged 5–17.",
+    "url": "https://psavblearninghub.com",
+    "telephone": "+91-98765-43210",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "IN"
+    },
+    "sameAs": [
+      "https://wa.me/919876543210"
+    ],
+    "offers": [
+      { "@type": "Offer", "name": "Abacus Classes" },
+      { "@type": "Offer", "name": "Vedic Math Classes" },
+      { "@type": "Offer", "name": "Brain Gym Classes" }
+    ]
+  }
+  </script>
+
+  <style>
+    /* ── Base ── */
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    h1, h2, h3, h4 {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    /* ── Hero gradient + animated pattern ── */
+    .hero-bg {
+      background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 40%, #3730a3 70%, #312e81 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-bg::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(circle at 20% 20%, rgba(255,255,255,0.06) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255,255,255,0.04) 0%, transparent 50%),
+        url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+
+    /* ── Floating shapes ── */
+    .floating-shape {
+      position: absolute;
+      border-radius: 50%;
+      animation: floatUp 8s ease-in-out infinite;
+      pointer-events: none;
+    }
+    @keyframes floatUp {
+      0%, 100% { transform: translateY(0) scale(1); opacity: 0.15; }
+      50%       { transform: translateY(-30px) scale(1.05); opacity: 0.25; }
+    }
+
+    /* ── Pulse CTA ── */
+    .pulse-btn {
+      animation: pulseCta 2.5s ease-in-out infinite;
+    }
+    @keyframes pulseCta {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(234,88,12,0.5); }
+      50%       { box-shadow: 0 0 0 14px rgba(234,88,12,0); }
+    }
+
+    /* ── Card hover lift ── */
+    .card-lift {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card-lift:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+    }
+
+    /* ── Dark mode overrides ── */
+    .dark .dark-card {
+      background-color: #1e293b;
+      border-color: #334155;
+      color: #e2e8f0;
+    }
+    .dark body {
+      background-color: #0f172a;
+      color: #e2e8f0;
+    }
+
+    /* ── Scroll-reveal ── */
+    [data-reveal] {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    [data-reveal].revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── Sunburst badge ── */
+    .sunburst {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(145deg, #fde047, #f59e0b);
+      border-radius: 50%;
+      box-shadow: 0 6px 30px rgba(245,158,11,0.55);
+      animation: sunPulse 2s ease-in-out infinite;
+    }
+    .sunburst::before,
+    .sunburst::after {
+      content: '';
+      position: absolute;
+      inset: -10px;
+      background: linear-gradient(145deg, #fde047, #f59e0b);
+      border-radius: 50%;
+      z-index: -1;
+      clip-path: polygon(
+        50% 0%, 56% 18%, 73% 7%, 65% 24%, 85% 20%,
+        72% 34%, 93% 37%, 77% 48%, 96% 56%, 77% 62%,
+        90% 74%, 71% 73%, 77% 93%, 61% 85%, 56% 100%,
+        44% 82%, 39% 100%, 34% 85%, 18% 93%, 24% 73%,
+        5% 74%, 18% 62%, 0% 56%, 19% 48%, 3% 37%,
+        24% 34%, 10% 20%, 31% 24%, 22% 7%, 40% 18%
+      );
+    }
+    @keyframes sunPulse {
+      0%,100% { transform: scale(1) rotate(0deg);   box-shadow: 0 6px 30px rgba(245,158,11,0.55); }
+      50%      { transform: scale(1.06) rotate(3deg); box-shadow: 0 10px 40px rgba(245,158,11,0.8);  }
+    }
+
+    /* ── Announcement ticker ── */
+    @keyframes ticker {
+      0%   { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+    .ticker-text { animation: ticker 45s linear infinite; white-space: nowrap; }
+
+    /* ── Urgency strip ── */
+    @keyframes flashBorder {
+      0%,100% { border-color: #f59e0b; }
+      50%      { border-color: #ef4444; }
+    }
+    .urgency-strip { animation: flashBorder 1.5s ease-in-out infinite; }
+
+    /* ── Stat card gradient ── */
+    .stat-card {
+      background: linear-gradient(135deg, #1e40af, #3730a3);
+    }
+
+    /* ── Feature icon bg ── */
+    .icon-bg-blue   { background: linear-gradient(135deg, #dbeafe, #bfdbfe); }
+    .icon-bg-green  { background: linear-gradient(135deg, #dcfce7, #bbf7d0); }
+    .icon-bg-orange { background: linear-gradient(135deg, #fed7aa, #fdba74); }
+    .icon-bg-purple { background: linear-gradient(135deg, #ede9fe, #ddd6fe); }
+
+    /* ── Nav ── */
+    #navbar {
+      transition: box-shadow 0.3s ease, background-color 0.3s ease;
+    }
+
+
+    /* ── Form input focus ── */
+    .form-input:focus {
+      outline: none;
+      border-color: #1e40af;
+      box-shadow: 0 0 0 3px rgba(30,64,175,0.15);
+    }
+    .dark .form-input {
+      background-color: #1e293b;
+      border-color: #475569;
+      color: #e2e8f0;
+    }
+    .dark .form-input:focus {
+      border-color: #60a5fa;
+      box-shadow: 0 0 0 3px rgba(96,165,250,0.15);
+    }
+
+    /* ── Section heading underline ── */
+    .section-heading::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(90deg, #1e40af, #ea580c);
+      border-radius: 2px;
+      margin: 12px auto 0;
+    }
+
+    /* ── Mobile menu slide ── */
+    #mobile-menu {
+      transition: max-height 0.3s ease;
+    }
+
+    /* ── Badge ── */
+    .badge {
+      display: inline-block;
+      padding: 2px 10px;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    /* ── Quick WA buttons ── */
+    .wa-quick-btn {
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .wa-quick-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(22,163,74,0.3);
+    }
+
+    /* ── Rotate chevron ── */
+    .rotate-180 { transform: rotate(180deg); }
+  </style>
+</head>
+
+<body class="bg-white dark:bg-gray-950 text-gray-800 dark:text-gray-100">
+
+<!-- ══════════════════════════════════════════════
+     STICKY NAVIGATION
+══════════════════════════════════════════════ -->
+<!-- ══════════════════════════════════════════════
+     ANNOUNCEMENT TICKER BAR
+══════════════════════════════════════════════ -->
+<div id="announce-bar" class="fixed top-0 left-0 right-0 z-[60] overflow-hidden py-1" style="background: linear-gradient(90deg, #0f2557 0%, #1a3a8f 40%, #0f2557 100%); border-bottom: 2px solid #f59e0b;">
+  <div class="ticker-text inline-block px-8" style="color:#fde68a; letter-spacing:0.03em; font-size:0.8rem; font-weight:600;">
+    <span style="color:#fbbf24;">★</span> &nbsp;New Batch Starting Soon — Limited Seats Available &nbsp;
+    <span style="color:#94a3b8;">|</span> &nbsp;
+    <span style="color:#fbbf24;">★</span> &nbsp;Enroll Now &amp; Secure Your Child's Spot &nbsp;
+    <span style="color:#94a3b8;">|</span> &nbsp;
+    <span style="color:#fbbf24;">★</span> &nbsp;WhatsApp: +91 81250 95061 &nbsp;
+    <span style="color:#94a3b8;">|</span> &nbsp;
+    <span style="color:#fbbf24;">★</span> &nbsp;Online &amp; Offline Batches &nbsp;·&nbsp; Abacus &nbsp;·&nbsp; Vedic Math &nbsp;·&nbsp; Brain Gym &nbsp;
+    <span style="color:#94a3b8;">|</span> &nbsp;
+    <span style="color:#fbbf24;">★</span> &nbsp;IIVA Certified Trainers &nbsp;·&nbsp; Proven Results &nbsp;·&nbsp; 500+ Happy Families &nbsp;&nbsp;&nbsp;
+  </div>
+</div>
+
+<nav id="navbar" class="fixed top-7 left-0 right-0 z-50 bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm border-b border-gray-100 dark:border-gray-800">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <!-- Logo -->
+      <a href="#" class="flex items-center gap-2 group">
+        <img src="images/PSAVBLogo.png" alt="PS AVB Learning Hub" class="h-10 w-auto rounded-lg shadow-md group-hover:scale-105 transition-transform" />
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <div class="hidden md:flex items-center gap-6 text-sm font-medium text-gray-600 dark:text-gray-300">
+        <a href="#" class="hover:text-blue-700 dark:hover:text-blue-400 transition-colors font-semibold text-blue-600 dark:text-blue-400">🏠 Home</a>
+        <a href="#modules"    class="hover:text-blue-700 dark:hover:text-blue-400 transition-colors">Courses</a>
+        <a href="#why-us"     class="hover:text-blue-700 dark:hover:text-blue-400 transition-colors">Why Us</a>
+        <a href="#outcomes"    class="hover:text-blue-700 dark:hover:text-blue-400 transition-colors">Outcomes</a>
+        <a href="#books"       class="hover:text-blue-700 dark:hover:text-blue-400 transition-colors">📚 Books</a>
+        <a href="#summer-camp" class="hover:text-yellow-500 dark:hover:text-yellow-400 transition-colors font-semibold text-orange-600 dark:text-yellow-400">☀️ Summer Camp</a>
+        <a href="tool/abacus.html" class="hover:text-blue-700 dark:hover:text-blue-400 transition-colors font-semibold text-blue-600 dark:text-blue-400">🧮 Digital Abacus Tool</a>
+        <a href="#contact"    class="hover:text-blue-700 dark:hover:text-blue-400 transition-colors">Contact</a>
+      </div>
+
+      <!-- Right Controls -->
+      <div class="flex items-center gap-2">
+        <!-- Dark mode toggle -->
+        <button id="dark-mode-toggle" class="p-2 rounded-lg text-gray-500 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors" aria-label="Toggle dark mode">
+          <span class="dark-icon"><i class="fas fa-moon"></i></span>
+        </button>
+
+        <!-- Enroll CTA (desktop) -->
+        <a href="#contact" class="hidden md:inline-flex items-center gap-1.5 bg-blue-700 hover:bg-blue-800 text-white text-sm font-semibold px-4 py-2 rounded-xl transition-colors shadow-sm">
+          <i class="fas fa-pen-to-square text-xs"></i> Enroll Now
+        </a>
+
+        <!-- Hamburger (mobile) -->
+        <button id="hamburger-btn" class="md:hidden p-2 rounded-lg text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors" aria-label="Open menu">
+          <i class="fas fa-bars text-lg"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden border-t border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-900 px-4 py-4 space-y-3">
+    <a href="#" class="block py-2 text-blue-700 dark:text-blue-400 font-bold">🏠 Home</a>
+    <a href="#modules"  class="block py-2 text-gray-700 dark:text-gray-300 hover:text-blue-700 font-medium">📚 Courses</a>
+    <a href="#why-us"   class="block py-2 text-gray-700 dark:text-gray-300 hover:text-blue-700 font-medium">⭐ Why Us</a>
+    <a href="#outcomes"    class="block py-2 text-gray-700 dark:text-gray-300 hover:text-blue-700 font-medium">🏆 Outcomes</a>
+    <a href="#books"          class="block py-2 text-gray-700 dark:text-gray-300 hover:text-blue-700 font-medium">📚 Books</a>
+    <a href="#summer-camp"    class="block py-2 text-orange-600 dark:text-yellow-400 font-bold">☀️ Summer Camp 2026</a>
+    <a href="tool/abacus.html" class="block py-2 text-blue-700 dark:text-blue-400 font-semibold">🧮 Student Digital Abacus Tool</a>
+    <a href="#contact"  class="block py-2 text-gray-700 dark:text-gray-300 hover:text-blue-700 font-medium">📞 Contact</a>
+    <div class="flex items-center gap-3 pt-2 border-t border-gray-100 dark:border-gray-800">
+      <a href="#contact" class="flex-1 text-center bg-blue-700 text-white font-semibold py-2 rounded-xl text-sm">Enroll Now</a>
+      <button id="dark-mode-toggle-mobile" class="p-2 rounded-lg border border-gray-200 dark:border-gray-600 text-gray-600 dark:text-gray-300">
+        <span class="dark-icon"><i class="fas fa-moon"></i></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+
+<!-- ══════════════════════════════════════════════
+     HERO SECTION
+══════════════════════════════════════════════ -->
+<section class="hero-bg min-h-screen flex items-center pt-24">
+  <!-- Floating decorative shapes -->
+  <div class="floating-shape w-72 h-72 bg-blue-500 top-10 -left-20 opacity-10" style="animation-delay:0s"></div>
+  <div class="floating-shape w-48 h-48 bg-indigo-400 bottom-20 -right-10 opacity-10" style="animation-delay:3s"></div>
+  <div class="floating-shape w-32 h-32 bg-purple-400 top-1/2 right-1/4 opacity-10" style="animation-delay:1.5s"></div>
+
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center text-white">
+    <!-- Badge -->
+    <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-1.5 mb-6">
+      <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+      <span class="text-sm font-medium text-white/90">Enrolments Open – Limited Seats!</span>
+    </div>
+
+    <!-- Title -->
+    <h1 class="text-4xl sm:text-5xl lg:text-7xl font-poppins font-extrabold mb-4 leading-tight">
+      PS AVB
+      <span class="block bg-gradient-to-r from-orange-400 to-yellow-300 bg-clip-text text-transparent">Learning Hub</span>
+    </h1>
+
+    <!-- Tagline -->
+    <p class="text-xl sm:text-2xl lg:text-3xl font-light text-blue-100 mb-4 max-w-3xl mx-auto">
+      Abacus | Vedic Math | Brain Development
+    </p>
+    <p class="text-base sm:text-lg text-blue-200 mb-10 max-w-2xl mx-auto">
+      Empowering children aged 5–17 with proven mental arithmetic techniques for lifelong academic success.
+    </p>
+
+    <!-- CTAs -->
+    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center flex-wrap">
+      <a href="#contact" class="pulse-btn inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold text-lg px-8 py-4 rounded-2xl shadow-2xl transition-colors">
+        <i class="fas fa-pen-to-square"></i>
+        Enroll Now
+      </a>
+      <a href="#modules" class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 text-white font-semibold text-base px-7 py-3.5 rounded-2xl transition-colors">
+        <i class="fas fa-book-open"></i>
+        Explore Courses
+      </a>
+      <!-- Mini sunburst sticker beside CTAs -->
+      <div class="sunburst w-20 h-20 ml-1 hidden sm:flex">
+        <div class="text-center z-10 relative">
+          <p class="font-extrabold text-red-700 text-xs leading-tight">Limited<br>Seats!</p>
+          <p class="text-red-600 text-xs font-bold">🔥</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Trust badges -->
+    <div class="flex flex-wrap justify-center gap-4 mt-12 text-sm text-blue-200">
+      <div class="flex items-center gap-1.5"><i class="fas fa-users text-green-400"></i> 500+ Students Trained</div>
+      <div class="flex items-center gap-1.5"><i class="fas fa-star text-yellow-400"></i> 4.9/5 Parent Rating</div>
+      <div class="flex items-center gap-1.5"><i class="fas fa-award text-orange-400"></i> IIVA Certified Trainers</div>
+      <div class="flex items-center gap-1.5"><i class="fas fa-clock text-blue-300"></i> Flexible Batches</div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="mt-16 animate-bounce">
+      <a href="#modules" class="text-white/40 hover:text-white/70 transition-colors">
+        <i class="fas fa-chevron-down text-2xl"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+     QUICK WHATSAPP BUTTONS
+══════════════════════════════════════════════ -->
+<section class="bg-green-50 dark:bg-gray-900 border-y border-green-100 dark:border-gray-800 py-6">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6">
+    <p class="text-center text-sm font-semibold text-gray-600 dark:text-gray-400 mb-4 uppercase tracking-wider">Quick Enquiry via WhatsApp</p>
+    <div class="flex flex-col sm:flex-row gap-3 justify-center">
+      <button id="wa-demo"
+        class="wa-quick-btn flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-3 rounded-xl shadow-md">
+        <i class="fab fa-whatsapp text-lg"></i> 📅 Book Free Demo
+      </button>
+      <button id="wa-fees"
+        class="wa-quick-btn flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-3 rounded-xl shadow-md">
+        <i class="fab fa-whatsapp text-lg"></i> 💰 Ask About Fees
+      </button>
+      <button id="wa-courses"
+        class="wa-quick-btn flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-3 rounded-xl shadow-md">
+        <i class="fab fa-whatsapp text-lg"></i> 📚 Course Details
+      </button>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+     LEARNING MODULES SECTION
+══════════════════════════════════════════════ -->
+<section id="modules" class="py-20 bg-white dark:bg-gray-950">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Heading -->
+    <div class="text-center mb-14" data-reveal>
+      <span class="badge bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 mb-3">Our Programmes</span>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-poppins font-bold text-gray-900 dark:text-white section-heading">
+        Learning Modules
+      </h2>
+      <p class="mt-4 text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+        Scientifically designed programs that build mental speed, focus, and academic confidence.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+      <!-- Card 1: Abacus -->
+      <div class="card-lift dark-card rounded-2xl border border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-800 shadow-sm overflow-hidden flex flex-col" data-reveal>
+        <div class="h-2 bg-gradient-to-r from-blue-600 to-blue-400"></div>
+        <div class="p-7 flex-1 flex flex-col">
+          <div class="text-5xl mb-4">🧮</div>
+          <span class="badge bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 mb-3">Ages 5–12</span>
+          <h3 class="text-2xl font-poppins font-bold text-gray-900 dark:text-white mb-3">Abacus</h3>
+          <p class="text-gray-600 dark:text-gray-400 text-sm mb-5">
+            The ancient abacus technique transformed into a modern mental arithmetic superpower. Children learn to calculate at lightning speed purely in their mind.
+          </p>
+
+          <!-- Core benefits (always visible) -->
+          <ul class="space-y-2 text-sm mb-5">
+            <li class="flex items-start gap-2"><i class="fas fa-check-circle text-blue-500 mt-0.5"></i><span class="text-gray-700 dark:text-gray-300">Builds photographic memory</span></li>
+            <li class="flex items-start gap-2"><i class="fas fa-check-circle text-blue-500 mt-0.5"></i><span class="text-gray-700 dark:text-gray-300">Enhances concentration &amp; focus</span></li>
+            <li class="flex items-start gap-2"><i class="fas fa-check-circle text-blue-500 mt-0.5"></i><span class="text-gray-700 dark:text-gray-300">Improves speed &amp; accuracy</span></li>
+          </ul>
+
+          <!-- Expandable course details -->
+          <div id="expand-abacus" class="hidden mb-5">
+            <!-- Course Levels -->
+            <div class="bg-blue-50 dark:bg-blue-900/20 rounded-xl p-4 mb-4">
+              <p class="text-xs font-bold uppercase tracking-wider text-blue-700 dark:text-blue-300 mb-2">Course Levels</p>
+              <div class="grid grid-cols-2 gap-2 text-xs">
+                <span class="bg-blue-100 dark:bg-blue-800/40 text-blue-800 dark:text-blue-200 rounded-lg px-3 py-1.5 font-semibold text-center">🌱 Junior</span>
+                <span class="bg-blue-100 dark:bg-blue-800/40 text-blue-800 dark:text-blue-200 rounded-lg px-3 py-1.5 font-semibold text-center">📘 Foundation</span>
+                <span class="bg-blue-100 dark:bg-blue-800/40 text-blue-800 dark:text-blue-200 rounded-lg px-3 py-1.5 font-semibold text-center">🚀 Advanced</span>
+                <span class="bg-blue-100 dark:bg-blue-800/40 text-blue-800 dark:text-blue-200 rounded-lg px-3 py-1.5 font-semibold text-center">🏆 Master</span>
+              </div>
+            </div>
+            <!-- Level details table -->
+            <p class="text-xs font-bold uppercase tracking-wider text-blue-700 dark:text-blue-300 mb-2">Level Details</p>
+            <div class="rounded-xl overflow-hidden border border-blue-100 dark:border-blue-900/40 text-xs mb-4">
+              <div class="flex bg-blue-600 text-white font-semibold">
+                <span class="w-28 px-3 py-2 shrink-0">Level</span>
+                <span class="flex-1 px-3 py-2">What your child learns</span>
+              </div>
+              <div class="flex bg-white dark:bg-gray-800">
+                <span class="w-28 px-3 py-2 shrink-0 font-semibold text-blue-700 dark:text-blue-300">L1 · Foundation</span>
+                <span class="flex-1 px-3 py-2 text-gray-600 dark:text-gray-400">1-digit additions &amp; subtractions</span>
+              </div>
+              <div class="flex bg-blue-50 dark:bg-blue-900/10">
+                <span class="w-28 px-3 py-2 shrink-0 font-semibold text-blue-700 dark:text-blue-300">L2 · Basic</span>
+                <span class="flex-1 px-3 py-2 text-gray-600 dark:text-gray-400">2-digit additions, subtractions, intro to visualization</span>
+              </div>
+              <div class="flex bg-white dark:bg-gray-800">
+                <span class="w-28 px-3 py-2 shrink-0 font-semibold text-blue-700 dark:text-blue-300">L3 · Elementary</span>
+                <span class="flex-1 px-3 py-2 text-gray-600 dark:text-gray-400">3-digit operations, intro to simple multiplication</span>
+              </div>
+              <div class="flex bg-blue-50 dark:bg-blue-900/10">
+                <span class="w-28 px-3 py-2 shrink-0 font-semibold text-blue-700 dark:text-blue-300">L4 · Intermediate</span>
+                <span class="flex-1 px-3 py-2 text-gray-600 dark:text-gray-400">4-digit additions, subtractions, multiplications</span>
+              </div>
+              <div class="flex bg-white dark:bg-gray-800">
+                <span class="w-28 px-3 py-2 shrink-0 font-semibold text-blue-700 dark:text-blue-300">L5 · Advanced</span>
+                <span class="flex-1 px-3 py-2 text-gray-600 dark:text-gray-400">2×2 digit multiplications, intro to divisions</span>
+              </div>
+              <div class="flex bg-blue-50 dark:bg-blue-900/10">
+                <span class="w-28 px-3 py-2 shrink-0 font-semibold text-blue-700 dark:text-blue-300">L6 · Advanced+</span>
+                <span class="flex-1 px-3 py-2 text-gray-600 dark:text-gray-400">Complex multiplications and divisions</span>
+              </div>
+              <div class="flex bg-white dark:bg-gray-800">
+                <span class="w-28 px-3 py-2 shrink-0 font-semibold text-blue-700 dark:text-blue-300">L7 · Expert</span>
+                <span class="flex-1 px-3 py-2 text-gray-600 dark:text-gray-400">Negative calculations and 4-digit divisions</span>
+              </div>
+              <div class="flex bg-blue-50 dark:bg-blue-900/10 rounded-b-xl">
+                <span class="w-28 px-3 py-2 shrink-0 font-semibold text-blue-700 dark:text-blue-300">L8 · Mastery</span>
+                <span class="flex-1 px-3 py-2 text-gray-600 dark:text-gray-400">Square roots, decimals, high-speed complex calculations</span>
+              </div>
+            </div>
+
+            <!-- Class Schedule -->
+            <div class="bg-gradient-to-r from-blue-700 to-indigo-700 rounded-xl p-4 mb-4 text-white">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <i class="fas fa-clock text-yellow-300"></i>
+                  <span class="font-semibold text-sm">Class Schedule</span>
+                </div>
+                <span class="bg-white/20 px-3 py-1 rounded-full text-xs font-bold">TUE · THU · SAT</span>
+              </div>
+            </div>
+
+            <!-- Mode + CTA strip -->
+            <div class="flex items-center justify-between bg-gradient-to-r from-blue-700 to-indigo-700 rounded-xl px-4 py-2.5 text-white text-xs font-semibold">
+              <span><i class="fas fa-laptop mr-1"></i> Online &amp; Offline</span>
+              <span class="bg-yellow-400 text-yellow-900 rounded-full px-3 py-1 font-bold text-xs animate-pulse">⭐ Limited Seats!</span>
+            </div>
+          </div>
+
+          <button data-expand-btn="abacus" class="inline-flex items-center gap-1 text-blue-700 dark:text-blue-400 font-semibold text-sm hover:underline">
+            <span>View Course Details</span>
+            <svg data-expand-icon class="w-4 h-4 ml-1 inline transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+        </div>
+        <div class="px-7 pb-6 mt-auto">
+          <a href="#contact" class="block text-center bg-blue-800 hover:bg-blue-900 text-white font-semibold py-2.5 rounded-xl text-sm transition-colors">
+            Enroll in Abacus →
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 2: Vedic Math -->
+      <div class="card-lift dark-card rounded-2xl border border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-800 shadow-sm overflow-hidden flex flex-col" data-reveal>
+        <div class="h-2 bg-gradient-to-r from-green-600 to-emerald-400"></div>
+        <div class="p-7 flex-1 flex flex-col">
+          <div class="text-5xl mb-4">🔢</div>
+          <span class="badge bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 mb-3">Ages 9–17</span>
+          <h3 class="text-2xl font-poppins font-bold text-gray-900 dark:text-white mb-3">Vedic Math</h3>
+          <p class="text-gray-600 dark:text-gray-400 text-sm mb-5">
+            Ancient Indian Vedic sutras made simple. Students solve complex calculations in seconds — from multiplication to algebra — with elegant mental shortcuts.
+          </p>
+
+          <ul class="space-y-2 text-sm mb-5">
+            <li class="flex items-start gap-2"><i class="fas fa-check-circle text-green-500 mt-0.5"></i><span class="text-gray-700 dark:text-gray-300">10x faster mental calculations</span></li>
+            <li class="flex items-start gap-2"><i class="fas fa-check-circle text-green-500 mt-0.5"></i><span class="text-gray-700 dark:text-gray-300">Exam performance booster</span></li>
+            <li class="flex items-start gap-2"><i class="fas fa-check-circle text-green-500 mt-0.5"></i><span class="text-gray-700 dark:text-gray-300">Reduces math anxiety</span></li>
+          </ul>
+
+          <div id="expand-vedic" class="hidden mb-5">
+            <!-- Course Modules -->
+            <div class="bg-green-50 dark:bg-green-900/20 rounded-xl p-4 mb-4">
+              <p class="text-xs font-bold uppercase tracking-wider text-green-700 dark:text-green-300 mb-3">Course Modules</p>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+                <div class="flex items-center gap-2 bg-green-100 dark:bg-green-800/40 text-green-800 dark:text-green-200 rounded-lg px-3 py-2">
+                  <i class="fas fa-book text-green-600"></i>
+                  <span>16 Sutras &amp; 13 Upasutras</span>
+                </div>
+                <div class="flex items-center gap-2 bg-green-100 dark:bg-green-800/40 text-green-800 dark:text-green-200 rounded-lg px-3 py-2">
+                  <i class="fas fa-plus-minus text-green-600"></i>
+                  <span>Rapid Addition &amp; Subtraction</span>
+                </div>
+                <div class="flex items-center gap-2 bg-green-100 dark:bg-green-800/40 text-green-800 dark:text-green-200 rounded-lg px-3 py-2">
+                  <i class="fas fa-times text-green-600"></i>
+                  <span>High-Speed Multiplication</span>
+                </div>
+                <div class="flex items-center gap-2 bg-green-100 dark:bg-green-800/40 text-green-800 dark:text-green-200 rounded-lg px-3 py-2">
+                  <i class="fas fa-divide text-green-600"></i>
+                  <span>Advanced Division</span>
+                </div>
+                <div class="flex items-center gap-2 bg-green-100 dark:bg-green-800/40 text-green-800 dark:text-green-200 rounded-lg px-3 py-2">
+                  <i class="fas fa-fraction text-green-600"></i>
+                  <span>Fractions</span>
+                </div>
+                <div class="flex items-center gap-2 bg-green-100 dark:bg-green-800/40 text-green-800 dark:text-green-200 rounded-lg px-3 py-2">
+                  <i class="fas fa-square-root-alt text-green-600"></i>
+                  <span>Algebraic Expressions</span>
+                </div>
+                <div class="flex items-center gap-2 bg-green-100 dark:bg-green-800/40 text-green-800 dark:text-green-200 rounded-lg px-3 py-2">
+                  <i class="fas fa-superscript text-green-600"></i>
+                  <span>Factorization</span>
+                </div>
+                <div class="flex items-center gap-2 bg-green-100 dark:bg-green-800/40 text-green-800 dark:text-green-200 rounded-lg px-3 py-2">
+                  <i class="fas fa-shapes text-green-600"></i>
+                  <span>Geometry</span>
+                </div>
+                <div class="flex items-center gap-2 bg-green-100 dark:bg-green-800/40 text-green-800 dark:text-green-200 rounded-lg px-3 py-2">
+                  <i class="fas fa-calculator text-green-600"></i>
+                  <span>Pythagoras Theorem</span>
+                </div>
+                <div class="flex items-center gap-2 bg-green-100 dark:bg-green-800/40 text-green-800 dark:text-green-200 rounded-lg px-3 py-2">
+                  <i class="fas fa-cube text-green-600"></i>
+                  <span>Triples (Tribhujank)</span>
+                </div>
+                <div class="flex items-center gap-2 bg-green-100 dark:bg-green-800/40 text-green-800 dark:text-green-200 rounded-lg px-3 py-2 sm:col-span-2">
+                  <i class="fas fa-calendar-alt text-green-600"></i>
+                  <span>Calendar Techniques</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Class Schedule -->
+            <div class="bg-gradient-to-r from-green-700 to-emerald-600 rounded-xl p-4 mb-4 text-white">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <i class="fas fa-clock text-yellow-300"></i>
+                  <span class="font-semibold text-sm">Class Schedule</span>
+                </div>
+                <span class="bg-white/20 px-3 py-1 rounded-full text-xs font-bold">MON · WED · FRI</span>
+              </div>
+            </div>
+
+            <!-- Course Levels -->
+            <div class="bg-green-50/50 dark:bg-green-900/10 rounded-xl p-4 mb-4">
+              <p class="text-xs font-bold uppercase tracking-wider text-green-700 dark:text-green-300 mb-2">Course Levels</p>
+              <div class="grid grid-cols-2 gap-2 text-xs">
+                <span class="bg-green-100 dark:bg-green-800/40 text-green-800 dark:text-green-200 rounded-lg px-3 py-1.5 font-semibold text-center">🌱 Beginner</span>
+                <span class="bg-green-100 dark:bg-green-800/40 text-green-800 dark:text-green-200 rounded-lg px-3 py-1.5 font-semibold text-center">📗 Intermediate</span>
+                <span class="bg-green-100 dark:bg-green-800/40 text-green-800 dark:text-green-200 rounded-lg px-3 py-1.5 font-semibold text-center">🚀 Advanced</span>
+                <span class="bg-green-100 dark:bg-green-800/40 text-green-800 dark:text-green-200 rounded-lg px-3 py-1.5 font-semibold text-center">🏆 Expert</span>
+              </div>
+            </div>
+
+            <!-- Mode + CTA strip -->
+            <div class="flex items-center justify-between bg-gradient-to-r from-green-700 to-emerald-600 rounded-xl px-4 py-2.5 text-white text-xs font-semibold">
+              <span><i class="fas fa-laptop mr-1"></i> Online &amp; Offline</span>
+              <span class="bg-yellow-400 text-yellow-900 rounded-full px-3 py-1 font-bold text-xs animate-pulse">⭐ Limited Seats!</span>
+            </div>
+          </div>
+
+          <button data-expand-btn="vedic" class="inline-flex items-center gap-1 text-green-700 dark:text-green-400 font-semibold text-sm hover:underline">
+            <span>View Course Details</span>
+            <svg data-expand-icon class="w-4 h-4 ml-1 inline transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+        </div>
+        <div class="px-7 pb-6 mt-auto">
+          <a href="#contact" class="block text-center bg-green-600 hover:bg-green-700 text-white font-semibold py-2.5 rounded-xl text-sm transition-colors">
+            Enroll in Vedic Math →
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 3: Brain Gym -->
+      <div class="card-lift dark-card rounded-2xl border border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-800 shadow-sm overflow-hidden flex flex-col" data-reveal>
+        <div class="h-2 bg-gradient-to-r from-orange-500 to-amber-400"></div>
+        <div class="p-7 flex-1 flex flex-col">
+          <div class="text-5xl mb-4">🧠</div>
+          <span class="badge bg-orange-100 dark:bg-orange-900/40 text-orange-700 dark:text-orange-300 mb-3">Ages 5–17</span>
+          <h3 class="text-2xl font-poppins font-bold text-gray-900 dark:text-white mb-3">Brain Gym</h3>
+          <p class="text-gray-600 dark:text-gray-400 text-sm mb-5">
+            Targeted cognitive exercises that synchronise mind and body, enhancing focus, memory, creativity, and overall learning readiness.
+          </p>
+
+          <ul class="space-y-2 text-sm mb-5">
+            <li class="flex items-start gap-2"><i class="fas fa-check-circle text-orange-500 mt-0.5"></i><span class="text-gray-700 dark:text-gray-300">Sharpens memory &amp; recall</span></li>
+            <li class="flex items-start gap-2"><i class="fas fa-check-circle text-orange-500 mt-0.5"></i><span class="text-gray-700 dark:text-gray-300">Increases reading comprehension</span></li>
+            <li class="flex items-start gap-2"><i class="fas fa-check-circle text-orange-500 mt-0.5"></i><span class="text-gray-700 dark:text-gray-300">Improves attention span</span></li>
+          </ul>
+
+          <div id="expand-braingym" class="hidden mb-5">
+            <!-- Course Levels -->
+            <div class="bg-orange-50 dark:bg-orange-900/20 rounded-xl p-4 mb-4">
+              <p class="text-xs font-bold uppercase tracking-wider text-orange-700 dark:text-orange-300 mb-2">Programme Modules</p>
+              <div class="grid grid-cols-2 gap-2 text-xs">
+                <span class="bg-orange-100 dark:bg-orange-800/40 text-orange-800 dark:text-orange-200 rounded-lg px-3 py-1.5 font-semibold text-center">🌱 Awareness</span>
+                <span class="bg-orange-100 dark:bg-orange-800/40 text-orange-800 dark:text-orange-200 rounded-lg px-3 py-1.5 font-semibold text-center">🔁 Midline</span>
+                <span class="bg-orange-100 dark:bg-orange-800/40 text-orange-800 dark:text-orange-200 rounded-lg px-3 py-1.5 font-semibold text-center">🎯 Focus</span>
+                <span class="bg-orange-100 dark:bg-orange-800/40 text-orange-800 dark:text-orange-200 rounded-lg px-3 py-1.5 font-semibold text-center">🏆 Integration</span>
+              </div>
+            </div>
+            <!-- Level details table -->
+            <p class="text-xs font-bold uppercase tracking-wider text-orange-700 dark:text-orange-300 mb-2">Programme Details</p>
+            <div class="rounded-xl overflow-hidden border border-orange-100 dark:border-orange-900/40 text-xs mb-4">
+              <div class="flex bg-orange-500 text-white font-semibold">
+                <span class="w-28 px-3 py-2 shrink-0">Module</span>
+                <span class="flex-1 px-3 py-2">Focus area &amp; activities</span>
+              </div>
+              <div class="flex bg-white dark:bg-gray-800">
+                <span class="w-28 px-3 py-2 shrink-0 font-semibold text-orange-600 dark:text-orange-300">M1 · Awareness</span>
+                <span class="flex-1 px-3 py-2 text-gray-600 dark:text-gray-400">Body-mind connection, sensory awareness, breathing exercises</span>
+              </div>
+              <div class="flex bg-orange-50 dark:bg-orange-900/10">
+                <span class="w-28 px-3 py-2 shrink-0 font-semibold text-orange-600 dark:text-orange-300">M2 · Midline</span>
+                <span class="flex-1 px-3 py-2 text-gray-600 dark:text-gray-400">Cross-crawl, lazy 8s — activates left–right brain coordination</span>
+              </div>
+              <div class="flex bg-white dark:bg-gray-800">
+                <span class="w-28 px-3 py-2 shrink-0 font-semibold text-orange-600 dark:text-orange-300">M3 · Focus</span>
+                <span class="flex-1 px-3 py-2 text-gray-600 dark:text-gray-400">Energy exercises to improve attention span and reduce distractions</span>
+              </div>
+              <div class="flex bg-orange-50 dark:bg-orange-900/10">
+                <span class="w-28 px-3 py-2 shrink-0 font-semibold text-orange-600 dark:text-orange-300">M4 · Memory</span>
+                <span class="flex-1 px-3 py-2 text-gray-600 dark:text-gray-400">Visual-spatial memory games, recall strengthening techniques</span>
+              </div>
+              <div class="flex bg-white dark:bg-gray-800">
+                <span class="w-28 px-3 py-2 shrink-0 font-semibold text-orange-600 dark:text-orange-300">M5 · Stress-Free</span>
+                <span class="flex-1 px-3 py-2 text-gray-600 dark:text-gray-400">Tension release, positive-point exercises, exam anxiety reduction</span>
+              </div>
+              <div class="flex bg-orange-50 dark:bg-orange-900/10 rounded-b-xl">
+                <span class="w-28 px-3 py-2 shrink-0 font-semibold text-orange-600 dark:text-orange-300">M6 · Integration</span>
+                <span class="flex-1 px-3 py-2 text-gray-600 dark:text-gray-400">26 movement activities, whole-brain learning, creativity &amp; problem solving</span>
+              </div>
+            </div>
+
+            <!-- Class Schedule -->
+            <div class="bg-gradient-to-r from-orange-500 to-amber-500 rounded-xl p-4 mb-4 text-white">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <i class="fas fa-clock text-yellow-300"></i>
+                  <span class="font-semibold text-sm">Class Schedule</span>
+                </div>
+                <span class="bg-white/20 px-3 py-1 rounded-full text-xs font-bold">MON · WED · FRI</span>
+              </div>
+            </div>
+
+            <!-- Mode + CTA strip -->
+            <div class="flex items-center justify-between bg-gradient-to-r from-orange-500 to-amber-500 rounded-xl px-4 py-2.5 text-white text-xs font-semibold">
+              <span><i class="fas fa-laptop mr-1"></i> Online &amp; Offline</span>
+              <span class="bg-yellow-400 text-yellow-900 rounded-full px-3 py-1 font-bold text-xs animate-pulse">⭐ Limited Seats!</span>
+            </div>
+          </div>
+
+          <button data-expand-btn="braingym" class="inline-flex items-center gap-1 text-orange-600 dark:text-orange-400 font-semibold text-sm hover:underline">
+            <span>View Course Details</span>
+            <svg data-expand-icon class="w-4 h-4 ml-1 inline transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+        </div>
+        <div class="px-7 pb-6 mt-auto">
+          <a href="#contact" class="block text-center bg-orange-600 hover:bg-orange-700 text-white font-semibold py-2.5 rounded-xl text-sm transition-colors">
+            Enroll in Brain Gym →
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+     WHY CHOOSE US
+══════════════════════════════════════════════ -->
+<section id="why-us" class="py-20 bg-gray-50 dark:bg-gray-900">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-14" data-reveal>
+      <span class="badge bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 mb-3">Our Advantages</span>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-poppins font-bold text-gray-900 dark:text-white section-heading">
+        Why Choose Us?
+      </h2>
+      <p class="mt-4 text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+        Thousands of families trust PS AVB Learning Hub to give their children an edge.
+      </p>
+
+      <!-- IIVA Credential Banner -->
+      <div class="mt-8 inline-flex flex-col sm:flex-row items-center gap-4 bg-white dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-2xl px-6 py-4 shadow-sm" data-reveal>
+        <div class="text-center sm:text-left">
+          <p class="font-poppins font-extrabold text-blue-800 dark:text-blue-300 text-base leading-tight">
+            Trained &amp; Certified by the IIVA
+          </p>
+          <p class="text-gray-500 dark:text-gray-400 text-sm mt-0.5">
+            Indian Institute of Vedic Maths &amp; Abacus — India's premier authority in Abacus &amp; Vedic Math education
+          </p>
+        </div>       
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+      <!-- Feature 1 -->
+      <div class="card-lift bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-sm border border-gray-100 dark:border-gray-700 text-center" data-reveal>
+        <div class="w-14 h-14 icon-bg-blue rounded-2xl flex items-center justify-center mx-auto mb-4">
+          <i class="fas fa-chalkboard-teacher text-2xl text-blue-700"></i>
+        </div>
+        <h3 class="font-poppins font-bold text-lg text-gray-900 dark:text-white mb-2">Expert Trainers</h3>
+        <p class="text-sm text-gray-600 dark:text-gray-400">Trained &amp; certified by <strong class="text-blue-700 dark:text-blue-400">IIVA</strong> — Indian Institute of Vedic Maths &amp; Abacus, with 5+ years of dedicated teaching experience.</p>
+        <div class="mt-3 inline-flex items-center gap-1.5 bg-blue-50 dark:bg-blue-900/30 border border-blue-200 dark:border-blue-700 rounded-full px-3 py-1 text-xs font-semibold text-blue-700 dark:text-blue-300">
+          <i class="fas fa-award text-blue-500"></i> IIVA Certified
+        </div>
+      </div>
+
+      <!-- Feature 2 -->
+      <div class="card-lift bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-sm border border-gray-100 dark:border-gray-700 text-center" data-reveal>
+        <div class="w-14 h-14 icon-bg-green rounded-2xl flex items-center justify-center mx-auto mb-4">
+          <i class="fas fa-layer-group text-2xl text-green-700"></i>
+        </div>
+        <h3 class="font-poppins font-bold text-lg text-gray-900 dark:text-white mb-2">Structured Levels</h3>
+        <p class="text-sm text-gray-600 dark:text-gray-400">Progressive 8-level curriculum with milestone certifications to track and celebrate every achievement.</p>
+      </div>
+
+      <!-- Feature 3 -->
+      <div class="card-lift bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-sm border border-gray-100 dark:border-gray-700 text-center" data-reveal>
+        <div class="w-14 h-14 icon-bg-orange rounded-2xl flex items-center justify-center mx-auto mb-4">
+          <i class="fas fa-clock text-2xl text-orange-600"></i>
+        </div>
+        <h3 class="font-poppins font-bold text-lg text-gray-900 dark:text-white mb-2">Flexible Batches</h3>
+        <p class="text-sm text-gray-600 dark:text-gray-400">Morning, evening &amp; weekend batches to fit every family's schedule — never miss a class.</p>
+      </div>
+
+      <!-- Feature 4 -->
+      <div class="card-lift bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-sm border border-gray-100 dark:border-gray-700 text-center" data-reveal>
+        <div class="w-14 h-14 icon-bg-purple rounded-2xl flex items-center justify-center mx-auto mb-4">
+          <i class="fas fa-trophy text-2xl text-purple-700"></i>
+        </div>
+        <h3 class="font-poppins font-bold text-lg text-gray-900 dark:text-white mb-2">Competition Ready</h3>
+        <p class="text-sm text-gray-600 dark:text-gray-400">Regular practice tests and state/national competition preparation to take your child to the world stage.</p>
+      </div>
+
+    </div>
+
+    <!-- Secondary features row -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-6">
+      <div class="flex items-start gap-4 bg-white dark:bg-gray-800 rounded-2xl p-5 shadow-sm border border-gray-100 dark:border-gray-700" data-reveal>
+        <div class="w-10 h-10 bg-blue-100 dark:bg-blue-900/40 rounded-xl flex items-center justify-center flex-shrink-0">
+          <i class="fas fa-users text-blue-700 text-sm"></i>
+        </div>
+        <div>
+          <h4 class="font-semibold text-gray-900 dark:text-white text-sm">Small Batch Sizes</h4>
+          <p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5">Max 10 students per batch — personalised attention guaranteed.</p>
+        </div>
+      </div>
+      <div class="flex items-start gap-4 bg-white dark:bg-gray-800 rounded-2xl p-5 shadow-sm border border-gray-100 dark:border-gray-700" data-reveal>
+        <div class="w-10 h-10 bg-green-100 dark:bg-green-900/40 rounded-xl flex items-center justify-center flex-shrink-0">
+          <i class="fas fa-chart-line text-green-700 text-sm"></i>
+        </div>
+        <div>
+          <h4 class="font-semibold text-gray-900 dark:text-white text-sm">Progress Tracking</h4>
+          <p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5">Monthly parent reports &amp; performance dashboards.</p>
+        </div>
+      </div>
+      <div class="flex items-start gap-4 bg-white dark:bg-gray-800 rounded-2xl p-5 shadow-sm border border-gray-100 dark:border-gray-700" data-reveal>
+        <div class="w-10 h-10 bg-orange-100 dark:bg-orange-900/40 rounded-xl flex items-center justify-center flex-shrink-0">
+          <i class="fas fa-gift text-orange-600 text-sm"></i>
+        </div>
+        <div>
+          <h4 class="font-semibold text-gray-900 dark:text-white text-sm">Free Demo Class</h4>
+          <p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5">Try before you commit — first session absolutely free!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+     OUTCOMES / STATS SECTION
+══════════════════════════════════════════════ -->
+<section id="outcomes" class="py-20 bg-white dark:bg-gray-950">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-14" data-reveal>
+      <span class="badge bg-orange-100 dark:bg-orange-900/40 text-orange-700 dark:text-orange-300 mb-3">Proven Results</span>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-poppins font-bold text-gray-900 dark:text-white section-heading">
+        Our Outcomes
+      </h2>
+      <p class="mt-4 text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+        Numbers that speak louder than words. Real results from real students.
+      </p>
+    </div>
+
+    <!-- Animated Counters -->
+    <div id="stats-section" class="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+      <div class="stat-card rounded-2xl p-6 text-center text-white shadow-lg" data-reveal>
+        <div class="text-4xl sm:text-5xl font-poppins font-extrabold mb-1"
+             data-target="500" data-suffix="+" id="stat-students">0+</div>
+        <div class="text-blue-200 text-sm font-medium">Happy Students</div>
+      </div>
+      <div class="stat-card rounded-2xl p-6 text-center text-white shadow-lg" style="background:linear-gradient(135deg,#16a34a,#15803d)" data-reveal>
+        <div class="text-4xl sm:text-5xl font-poppins font-extrabold mb-1"
+             data-target="8" data-suffix=" Yrs" id="stat-years">0 Yrs</div>
+        <div class="text-green-200 text-sm font-medium">Of Excellence</div>
+      </div>
+      <div class="stat-card rounded-2xl p-6 text-center text-white shadow-lg" style="background:linear-gradient(135deg,#ea580c,#c2410c)" data-reveal>
+        <div class="text-4xl sm:text-5xl font-poppins font-extrabold mb-1"
+             data-target="98" data-suffix="%" id="stat-satisfaction">0%</div>
+        <div class="text-orange-200 text-sm font-medium">Parent Satisfaction</div>
+      </div>
+    </div>
+
+    <!-- Testimonials -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6" data-reveal>
+      <div class="bg-blue-50 dark:bg-gray-800 rounded-2xl p-6 border border-blue-100 dark:border-gray-700">
+        <div class="flex items-center gap-1 text-yellow-400 mb-3">
+          <i class="fas fa-star text-sm"></i><i class="fas fa-star text-sm"></i><i class="fas fa-star text-sm"></i><i class="fas fa-star text-sm"></i><i class="fas fa-star text-sm"></i>
+        </div>
+        <p class="text-gray-700 dark:text-gray-300 text-sm italic mb-4">"My daughter went from struggling in maths to topping her class in just 3 months. The abacus training is truly magical!"</p>
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 bg-blue-700 rounded-full flex items-center justify-center text-white font-bold text-sm">P</div>
+          <div>
+            <div class="font-semibold text-sm text-gray-900 dark:text-white">Priya Sharma</div>
+            <div class="text-xs text-gray-500">Parent of Class 4 student</div>
+          </div>
+        </div>
+      </div>
+      <div class="bg-green-50 dark:bg-gray-800 rounded-2xl p-6 border border-green-100 dark:border-gray-700">
+        <div class="flex items-center gap-1 text-yellow-400 mb-3">
+          <i class="fas fa-star text-sm"></i><i class="fas fa-star text-sm"></i><i class="fas fa-star text-sm"></i><i class="fas fa-star text-sm"></i><i class="fas fa-star text-sm"></i>
+        </div>
+        <p class="text-gray-700 dark:text-gray-300 text-sm italic mb-4">"Vedic Math changed how my son approaches problems. He now cracks competitive exam questions in seconds. Highly recommend!"</p>
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 bg-green-700 rounded-full flex items-center justify-center text-white font-bold text-sm">R</div>
+          <div>
+            <div class="font-semibold text-sm text-gray-900 dark:text-white">Rajesh Kumar</div>
+            <div class="text-xs text-gray-500">Parent of Class 9 student</div>
+          </div>
+        </div>
+      </div>
+      <div class="bg-orange-50 dark:bg-gray-800 rounded-2xl p-6 border border-orange-100 dark:border-gray-700">
+        <div class="flex items-center gap-1 text-yellow-400 mb-3">
+          <i class="fas fa-star text-sm"></i><i class="fas fa-star text-sm"></i><i class="fas fa-star text-sm"></i><i class="fas fa-star text-sm"></i><i class="fas fa-star-half-alt text-sm"></i>
+        </div>
+        <p class="text-gray-700 dark:text-gray-300 text-sm italic mb-4">"The Brain Gym programme helped my hyperactive child focus better in school. Teachers noticed a remarkable improvement!"</p>
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 bg-orange-600 rounded-full flex items-center justify-center text-white font-bold text-sm">A</div>
+          <div>
+            <div class="font-semibold text-sm text-gray-900 dark:text-white">Anitha Menon</div>
+            <div class="text-xs text-gray-500">Parent of Class 6 student</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+     BOOKS & STUDY MATERIALS
+══════════════════════════════════════════════ -->
+<section id="books" class="py-20 bg-gray-50 dark:bg-gray-900">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Header -->
+    <div class="text-center mb-14" data-reveal>
+      <span class="badge bg-orange-100 dark:bg-orange-900/40 text-orange-700 dark:text-orange-300 mb-3">📚 Study Materials</span>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-poppins font-bold text-gray-900 dark:text-white section-heading">
+        Books &amp; Learning Resources
+      </h2>
+      <p class="mt-4 text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+        Carefully selected books to complement your child's learning journey — available on Amazon for home practice.
+      </p>
+    </div>
+
+    <!-- Book grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
+
+      <!-- Book 1: Abacus Beginner -->
+      <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 overflow-hidden card-lift flex flex-col" data-reveal>
+        <!-- Book cover mockup -->
+        <div class="h-52 flex items-center justify-center relative overflow-hidden" style="background: linear-gradient(135deg, #1e40af, #3b82f6);">
+          <div class="absolute inset-0 opacity-10" style="background-image: repeating-linear-gradient(45deg, #fff 0, #fff 1px, transparent 0, transparent 50%); background-size: 12px 12px;"></div>
+          <div class="relative text-center px-4">
+            <div class="text-5xl mb-2">🔢</div>
+            <p class="text-white font-poppins font-bold text-sm leading-tight">Abacus</p>
+            <p class="text-blue-200 text-xs">Beginner's Workbook</p>
+          </div>
+          <span class="absolute top-3 right-3 bg-yellow-400 text-yellow-900 text-xs font-bold px-2 py-0.5 rounded-full">Beginner</span>
+        </div>
+        <div class="p-5 flex flex-col flex-1">
+          <h3 class="font-poppins font-bold text-gray-900 dark:text-white text-base mb-1">Abacus Beginner's Workbook</h3>
+          <p class="text-gray-500 dark:text-gray-400 text-xs mb-3 flex-1">Step-by-step introduction to the abacus with illustrated exercises for children aged 5–8. Covers Level 1 &amp; 2.</p>
+          <div class="flex items-center gap-1 mb-4">
+            <i class="fas fa-star text-yellow-400 text-xs"></i>
+            <i class="fas fa-star text-yellow-400 text-xs"></i>
+            <i class="fas fa-star text-yellow-400 text-xs"></i>
+            <i class="fas fa-star text-yellow-400 text-xs"></i>
+            <i class="fas fa-star-half-alt text-yellow-400 text-xs"></i>
+            <span class="text-gray-400 text-xs ml-1">4.5</span>
+          </div>
+          <a href="https://www.amazon.in/s?k=abacus+workbook+for+kids+beginners" target="_blank" rel="noopener noreferrer"
+            class="flex items-center justify-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-semibold text-sm py-2.5 rounded-xl transition-colors w-full">
+            <i class="fab fa-amazon"></i> Buy on Amazon
+          </a>
+        </div>
+      </div>
+
+      <!-- Book 2: Abacus Advanced -->
+      <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 overflow-hidden card-lift flex flex-col" data-reveal>
+        <div class="h-52 flex items-center justify-center relative overflow-hidden" style="background: linear-gradient(135deg, #1d4ed8, #06b6d4);">
+          <div class="absolute inset-0 opacity-10" style="background-image: repeating-linear-gradient(45deg, #fff 0, #fff 1px, transparent 0, transparent 50%); background-size: 12px 12px;"></div>
+          <div class="relative text-center px-4">
+            <div class="text-5xl mb-2">🔢</div>
+            <p class="text-white font-poppins font-bold text-sm leading-tight">Abacus</p>
+            <p class="text-blue-200 text-xs">Advanced Practice</p>
+          </div>
+          <span class="absolute top-3 right-3 bg-blue-400 text-white text-xs font-bold px-2 py-0.5 rounded-full">Advanced</span>
+        </div>
+        <div class="p-5 flex flex-col flex-1">
+          <h3 class="font-poppins font-bold text-gray-900 dark:text-white text-base mb-1">Abacus Advanced Practice Book</h3>
+          <p class="text-gray-500 dark:text-gray-400 text-xs mb-3 flex-1">High-speed calculation drills covering Levels 3–8. Includes multiplication, division, and mental arithmetic challenges.</p>
+          <div class="flex items-center gap-1 mb-4">
+            <i class="fas fa-star text-yellow-400 text-xs"></i>
+            <i class="fas fa-star text-yellow-400 text-xs"></i>
+            <i class="fas fa-star text-yellow-400 text-xs"></i>
+            <i class="fas fa-star text-yellow-400 text-xs"></i>
+            <i class="fas fa-star text-yellow-400 text-xs"></i>
+            <span class="text-gray-400 text-xs ml-1">5.0</span>
+          </div>
+          <a href="https://www.amazon.in/s?k=abacus+advanced+practice+book+mental+arithmetic" target="_blank" rel="noopener noreferrer"
+            class="flex items-center justify-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-semibold text-sm py-2.5 rounded-xl transition-colors w-full">
+            <i class="fab fa-amazon"></i> Buy on Amazon
+          </a>
+        </div>
+      </div>
+
+      <!-- Book 3: Vedic Mathematics -->
+      <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 overflow-hidden card-lift flex flex-col" data-reveal>
+        <div class="h-52 flex items-center justify-center relative overflow-hidden" style="background: linear-gradient(135deg, #15803d, #4ade80);">
+          <div class="absolute inset-0 opacity-10" style="background-image: repeating-linear-gradient(45deg, #fff 0, #fff 1px, transparent 0, transparent 50%); background-size: 12px 12px;"></div>
+          <div class="relative text-center px-4">
+            <div class="text-5xl mb-2">🧮</div>
+            <p class="text-white font-poppins font-bold text-sm leading-tight">Vedic</p>
+            <p class="text-green-100 text-xs">Mathematics</p>
+          </div>
+          <span class="absolute top-3 right-3 bg-green-400 text-green-900 text-xs font-bold px-2 py-0.5 rounded-full">All Levels</span>
+        </div>
+        <div class="p-5 flex flex-col flex-1">
+          <h3 class="font-poppins font-bold text-gray-900 dark:text-white text-base mb-1">Vedic Mathematics for Students</h3>
+          <p class="text-gray-500 dark:text-gray-400 text-xs mb-3 flex-1">Master ancient Indian sutras for lightning-fast calculations. Ideal for school students and competitive exam aspirants.</p>
+          <div class="flex items-center gap-1 mb-4">
+            <i class="fas fa-star text-yellow-400 text-xs"></i>
+            <i class="fas fa-star text-yellow-400 text-xs"></i>
+            <i class="fas fa-star text-yellow-400 text-xs"></i>
+            <i class="fas fa-star text-yellow-400 text-xs"></i>
+            <i class="fas fa-star-half-alt text-yellow-400 text-xs"></i>
+            <span class="text-gray-400 text-xs ml-1">4.5</span>
+          </div>
+          <a href="https://www.amazon.in/s?k=vedic+mathematics+book+for+students" target="_blank" rel="noopener noreferrer"
+            class="flex items-center justify-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-semibold text-sm py-2.5 rounded-xl transition-colors w-full">
+            <i class="fab fa-amazon"></i> Buy on Amazon
+          </a>
+        </div>
+      </div>
+
+      <!-- Book 4: Brain Gym -->
+      <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 overflow-hidden card-lift flex flex-col" data-reveal>
+        <div class="h-52 flex items-center justify-center relative overflow-hidden" style="background: linear-gradient(135deg, #c2410c, #fb923c);">
+          <div class="absolute inset-0 opacity-10" style="background-image: repeating-linear-gradient(45deg, #fff 0, #fff 1px, transparent 0, transparent 50%); background-size: 12px 12px;"></div>
+          <div class="relative text-center px-4">
+            <div class="text-5xl mb-2">🧠</div>
+            <p class="text-white font-poppins font-bold text-sm leading-tight">Brain Gym</p>
+            <p class="text-orange-100 text-xs">26 Activities</p>
+          </div>
+          <span class="absolute top-3 right-3 bg-yellow-400 text-yellow-900 text-xs font-bold px-2 py-0.5 rounded-full">Ages 5–17</span>
+        </div>
+        <div class="p-5 flex flex-col flex-1">
+          <h3 class="font-poppins font-bold text-gray-900 dark:text-white text-base mb-1">Brain Gym — Teacher's Edition</h3>
+          <p class="text-gray-500 dark:text-gray-400 text-xs mb-3 flex-1">The original Brain Gym handbook with 26 movement activities. Enhances focus, memory, and whole-brain learning for children.</p>
+          <div class="flex items-center gap-1 mb-4">
+            <i class="fas fa-star text-yellow-400 text-xs"></i>
+            <i class="fas fa-star text-yellow-400 text-xs"></i>
+            <i class="fas fa-star text-yellow-400 text-xs"></i>
+            <i class="fas fa-star text-yellow-400 text-xs"></i>
+            <i class="fas fa-star text-yellow-400 text-xs"></i>
+            <span class="text-gray-400 text-xs ml-1">5.0</span>
+          </div>
+          <a href="https://www.amazon.in/s?k=brain+gym+book+paul+dennison+children" target="_blank" rel="noopener noreferrer"
+            class="flex items-center justify-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-semibold text-sm py-2.5 rounded-xl transition-colors w-full">
+            <i class="fab fa-amazon"></i> Buy on Amazon
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom note -->
+    <div class="text-center" data-reveal>
+      <div class="inline-flex items-center gap-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl px-6 py-4 shadow-sm">
+        <i class="fab fa-amazon text-orange-500 text-2xl"></i>
+        <p class="text-sm text-gray-600 dark:text-gray-400">
+          All books link to <strong class="text-gray-800 dark:text-gray-200">Amazon India</strong> for easy purchase &amp; home delivery.
+          <span class="block text-xs text-gray-400 mt-0.5">Contact us on WhatsApp if you need guidance on which book suits your child.</span>
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     SUMMER CAMP 2026
+══════════════════════════════════════════════ -->
+<section id="summer-camp" class="py-20 relative overflow-hidden" style="background: linear-gradient(135deg, #0f2557 0%, #1a3a8f 50%, #0f2557 100%);">
+
+  <!-- Decorative sun rays background -->
+  <div class="absolute inset-0 opacity-5" style="background-image: repeating-conic-gradient(#fde047 0deg 10deg, transparent 10deg 20deg); background-size: 300px 300px; background-position: center;"></div>
+
+  <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Header -->
+    <div class="text-center mb-12" data-reveal>
+      <div class="inline-flex items-center gap-2 bg-yellow-400/20 border border-yellow-400/40 rounded-full px-4 py-1.5 mb-4">
+        <span class="w-2 h-2 bg-yellow-400 rounded-full animate-pulse"></span>
+        <span class="text-yellow-300 text-sm font-semibold tracking-wide">Starting Soon — Limited Seats</span>
+      </div>
+      <h2 class="text-4xl sm:text-5xl lg:text-6xl font-poppins font-extrabold text-white mb-3">
+        ☀️ Summer Camp <span class="text-yellow-400">2026</span>
+      </h2>
+      <p class="text-blue-200 text-lg sm:text-xl max-w-2xl mx-auto">
+        Give your child the most productive summer ever — sharpen their mind while they have fun!
+      </p>
+    </div>
+
+    <!-- Camp cards -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12" data-reveal>
+
+      <!-- Abacus Camp -->
+      <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 text-white hover:bg-white/15 transition-all hover:-translate-y-1">
+        <div class="text-4xl mb-3">🔢</div>
+        <h3 class="font-poppins font-bold text-lg mb-1 text-yellow-300">Abacus Camp</h3>
+        <p class="text-blue-200 text-sm mb-4">Intensive speed-calculation training using the abacus. Kids master mental arithmetic in just a few weeks.</p>
+        <ul class="space-y-1.5 text-sm text-blue-100">
+          <li class="flex items-center gap-2"><i class="fas fa-check text-yellow-400 text-xs"></i> Ages 5 – 12</li>
+          <li class="flex items-center gap-2"><i class="fas fa-check text-yellow-400 text-xs"></i> Levels 1 – 4 covered</li>
+          <li class="flex items-center gap-2"><i class="fas fa-check text-yellow-400 text-xs"></i> Certificate on completion (upon request)</li>
+          <li class="flex items-center gap-2"><i class="fas fa-check text-yellow-400 text-xs"></i> Fun daily practice games</li>
+        </ul>
+      </div>
+
+      <!-- Vedic Math Camp -->
+      <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 text-white hover:bg-white/15 transition-all hover:-translate-y-1">
+        <div class="text-4xl mb-3">🧮</div>
+        <h3 class="font-poppins font-bold text-lg mb-1 text-yellow-300">Vedic Math Camp</h3>
+        <p class="text-blue-200 text-sm mb-4">Ancient Indian shortcuts made exciting. Students solve complex sums in seconds — impressing everyone around them!</p>
+        <ul class="space-y-1.5 text-sm text-blue-100">
+          <li class="flex items-center gap-2"><i class="fas fa-check text-yellow-400 text-xs"></i> Ages 9 – 17</li>
+          <li class="flex items-center gap-2"><i class="fas fa-check text-yellow-400 text-xs"></i> Multiplication to square roots</li>
+          <li class="flex items-center gap-2"><i class="fas fa-check text-yellow-400 text-xs"></i> Exam prep boost</li>
+          <li class="flex items-center gap-2"><i class="fas fa-check text-yellow-400 text-xs"></i> Certificate on completion (upon request)</li>
+        </ul>
+      </div>
+
+      <!-- Brain Gym Camp -->
+      <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 text-white hover:bg-white/15 transition-all hover:-translate-y-1">
+        <div class="text-4xl mb-3">🧠</div>
+        <h3 class="font-poppins font-bold text-lg mb-1 text-yellow-300">Brain Gym Camp</h3>
+        <p class="text-blue-200 text-sm mb-4">Movement-based cognitive exercises that supercharge focus, memory, and creativity before the new school year begins.</p>
+        <ul class="space-y-1.5 text-sm text-blue-100">
+          <li class="flex items-center gap-2"><i class="fas fa-check text-yellow-400 text-xs"></i> Ages 5 – 17</li>
+          <li class="flex items-center gap-2"><i class="fas fa-check text-yellow-400 text-xs"></i> 26 movement activities</li>
+          <li class="flex items-center gap-2"><i class="fas fa-check text-yellow-400 text-xs"></i> Stress & anxiety relief</li>
+          <li class="flex items-center gap-2"><i class="fas fa-check text-yellow-400 text-xs"></i> Certificate on completion (upon request)</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Highlights strip -->
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-12" data-reveal>
+      <div class="bg-yellow-400/15 border border-yellow-400/30 rounded-xl p-4 text-center">
+        <div class="text-2xl font-poppins font-extrabold text-yellow-400">4 Weeks</div>
+        <div class="text-blue-200 text-xs mt-1">Intensive Programme</div>
+      </div>
+      <div class="bg-yellow-400/15 border border-yellow-400/30 rounded-xl p-4 text-center">
+        <div class="text-2xl font-poppins font-extrabold text-yellow-400">Online</div>
+        <div class="text-blue-200 text-xs mt-1">&amp; Offline Modes</div>
+      </div>
+      <div class="bg-yellow-400/15 border border-yellow-400/30 rounded-xl p-4 text-center">
+        <div class="text-2xl font-poppins font-extrabold text-yellow-400">Morning</div>
+        <div class="text-blue-200 text-xs mt-1">&amp; Evening Batches</div>
+      </div>
+      <div class="bg-yellow-400/15 border border-yellow-400/30 rounded-xl p-4 text-center">
+        <div class="text-2xl font-poppins font-extrabold text-yellow-400">🏅 Cert</div>
+        <div class="text-blue-200 text-xs mt-1">On Completion</div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="text-center" data-reveal>
+      <div class="inline-block bg-white/10 border border-white/20 rounded-2xl px-8 py-6">
+        <p class="text-yellow-300 font-poppins font-bold text-xl mb-1">🔥 Registrations Open Now!</p>
+        <p class="text-blue-200 text-sm mb-5">Seats are limited — early birds get priority batch selection.</p>
+        <a href="#contact" class="inline-flex items-center gap-2 bg-yellow-400 hover:bg-yellow-300 text-blue-900 font-poppins font-extrabold text-base px-8 py-3.5 rounded-xl shadow-lg transition-colors">
+          <i class="fas fa-sun"></i> Book My Summer Camp Seat
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     CONTACT / ENROLL FORM
+══════════════════════════════════════════════ -->
+<section id="contact" class="py-20 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-gray-900 dark:to-gray-950">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+
+
+    <!-- ── Urgency countdown strip ── -->
+    <div class="urgency-strip border-2 rounded-2xl bg-gradient-to-r from-amber-50 to-orange-50 dark:from-gray-800 dark:to-gray-800 p-4 sm:p-5 mb-10 text-center" data-reveal>
+      <p class="text-gray-800 dark:text-gray-200 font-poppins font-bold text-base sm:text-lg mb-3">
+        ⚡ New Batch Starting Soon — Seats Filling Fast!
+      </p>
+      <div class="flex flex-wrap justify-center gap-3 text-xs sm:text-sm font-semibold mb-3">
+        <span class="flex items-center gap-1.5 bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300 px-3 py-1.5 rounded-full"><i class="fas fa-fire"></i> Only a few seats left</span>
+        <span class="flex items-center gap-1.5 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 px-3 py-1.5 rounded-full"><i class="fas fa-check-circle"></i> Online &amp; Offline</span>
+        <span class="flex items-center gap-1.5 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 px-3 py-1.5 rounded-full"><i class="fas fa-gift"></i> Free Demo Class</span>
+        <span class="flex items-center gap-1.5 bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300 px-3 py-1.5 rounded-full"><i class="fas fa-clock"></i> Morning &amp; Evening Batches</span>
+      </div>
+      <p class="text-gray-500 dark:text-gray-400 text-xs">📲 Register now &amp; we'll confirm your slot via WhatsApp within minutes!</p>
+    </div>
+
+    <div class="text-center mb-10" data-reveal>
+      <span class="badge bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 mb-3">Get Started</span>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-poppins font-bold text-gray-900 dark:text-white section-heading">
+        Enroll Your Child Today
+      </h2>
+      <p class="mt-4 text-lg text-gray-600 dark:text-gray-400">
+        Fill the form below and connect with us instantly via WhatsApp.
+      </p>
+    </div>
+
+    <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl p-8 sm:p-10 border border-gray-100 dark:border-gray-700" data-reveal>
+      <form id="enroll-form" novalidate>
+
+        <!-- Honeypot (hidden from real users) -->
+        <div style="position:absolute;left:-9999px;top:-9999px;" aria-hidden="true">
+          <label for="website">Website (leave blank)</label>
+          <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+
+          <!-- Name -->
+          <div>
+            <label for="name" class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-1.5">
+              Parent / Guardian Name <span class="text-red-500">*</span>
+            </label>
+            <input type="text" id="name" name="name" required
+              placeholder="e.g. Ramesh Iyer"
+              class="form-input w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-600 text-gray-900 dark:text-white bg-white dark:bg-gray-700 text-sm transition-colors" />
+            <p id="name-error" class="hidden text-xs text-red-500 mt-1.5 flex items-center gap-1">
+              <i class="fas fa-exclamation-circle"></i> <span></span>
+            </p>
+          </div>
+
+          <!-- Phone -->
+          <div>
+            <label for="phone" class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-1.5">
+              WhatsApp / Phone Number <span class="text-red-500">*</span>
+            </label>
+            <div class="flex">
+              <span class="inline-flex items-center px-3 rounded-l-xl border border-r-0 border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-600 text-gray-500 dark:text-gray-300 text-sm font-medium">+91</span>
+              <input type="tel" id="phone" name="phone" required maxlength="10"
+                placeholder="9876543210"
+                class="form-input flex-1 px-4 py-3 rounded-r-xl border border-gray-200 dark:border-gray-600 text-gray-900 dark:text-white bg-white dark:bg-gray-700 text-sm transition-colors" />
+            </div>
+            <p id="phone-error" class="hidden text-xs text-red-500 mt-1.5 flex items-center gap-1">
+              <i class="fas fa-exclamation-circle"></i> <span></span>
+            </p>
+          </div>
+
+          <!-- Child Age -->
+          <div>
+            <label for="age" class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-1.5">
+              Child's Age <span class="text-red-500">*</span>
+            </label>
+            <select id="age" name="age" required
+              class="form-input w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-600 text-gray-900 dark:text-white bg-white dark:bg-gray-700 text-sm transition-colors">
+              <option value="">Select Age</option>
+              <option value="5">5 years</option>
+              <option value="6">6 years</option>
+              <option value="7">7 years</option>
+              <option value="8">8 years</option>
+              <option value="9">9 years</option>
+              <option value="10">10 years</option>
+              <option value="11">11 years</option>
+              <option value="12">12 years</option>
+              <option value="13">13 years</option>
+              <option value="14">14 years</option>
+              <option value="15">15 years</option>
+              <option value="16">16 years</option>
+              <option value="17+">17+ years</option>
+            </select>
+            <p id="age-error" class="hidden text-xs text-red-500 mt-1.5"></p>
+            <!-- Age recommendation box -->
+            <div id="recommendation-box" class="hidden mt-2 p-3 rounded-lg border text-sm font-medium transition-all duration-300">
+              <span id="recommendation-text"></span>
+            </div>
+          </div>
+
+          <!-- Course Interest -->
+          <div>
+            <label for="course" class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-1.5">
+              Course Interest <span class="text-red-500">*</span>
+            </label>
+            <select id="course" name="course" required
+              class="form-input w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-600 text-gray-900 dark:text-white bg-white dark:bg-gray-700 text-sm transition-colors">
+              <option value="">Select a Course</option>
+              <option value="Abacus">🔢 Abacus</option>
+              <option value="Vedic Math">🧮 Vedic Math</option>
+              <option value="Brain Gym">🧠 Brain Gym</option>
+              <option value="All Courses">📚 All Courses (Bundle)</option>
+            </select>
+            <p id="course-error" class="hidden text-xs text-red-500 mt-1.5"></p>
+          </div>
+
+          <!-- Preferred Batch Time -->
+          <div>
+            <label for="batchTime" class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-1.5">
+              Preferred Batch Time <span class="text-red-500">*</span>
+            </label>
+            <select id="batchTime" name="batchTime" required
+              class="form-input w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-600 text-gray-900 dark:text-white bg-white dark:bg-gray-700 text-sm transition-colors">
+              <option value="">Select Batch Time</option>
+              <option value="Morning (7am–10am)">🌅 Morning (7am – 10am)</option>
+              <option value="Evening (4pm–7pm)">🌆 Evening (4pm – 7pm)</option>
+              <option value="Weekend (Sat–Sun)">📅 Weekend (Sat – Sun)</option>
+            </select>
+            <p id="batchTime-error" class="hidden text-xs text-red-500 mt-1.5"></p>
+          </div>
+
+          <!-- Message -->
+          <div>
+            <label for="message" class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-1.5">
+              Additional Message <span class="text-gray-400 font-normal">(optional)</span>
+            </label>
+            <textarea id="message" name="message" rows="3"
+              placeholder="Any specific requirements or questions…"
+              class="form-input w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-600 text-gray-900 dark:text-white bg-white dark:bg-gray-700 text-sm transition-colors resize-none"></textarea>
+          </div>
+
+        </div>
+
+        <!-- Terms & Conditions -->
+        <div class="mt-6">
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" id="terms" name="terms"
+              class="mt-0.5 w-4 h-4 accent-blue-700 rounded cursor-pointer" />
+            <span class="text-sm text-gray-600 dark:text-gray-400">
+              I agree to the
+              <button type="button" onclick="openTermsModal()" class="text-blue-700 dark:text-blue-400 font-semibold underline hover:text-blue-900 bg-transparent border-none cursor-pointer p-0">Terms &amp; Conditions</button>
+              and consent to being contacted via WhatsApp by PS AVB Learning Hub.
+            </span>
+          </label>
+          <p id="terms-error" class="hidden text-xs text-red-500 mt-1.5 ml-7"></p>
+        </div>
+
+        <!-- Submit -->
+        <div class="mt-8">
+          <button type="submit"
+            class="w-full flex items-center justify-center gap-3 bg-green-600 hover:bg-green-700 text-white font-bold text-lg py-4 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-200 group">
+            <i class="fab fa-whatsapp text-2xl group-hover:scale-110 transition-transform"></i>
+            Enroll via WhatsApp 📲
+          </button>
+          <p class="text-center text-xs text-gray-500 dark:text-gray-400 mt-3">
+            <i class="fas fa-lock text-green-500 mr-1"></i>
+            Your data is safe. We never spam or share your information.
+          </p>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     TERMS & CONDITIONS MODAL
+══════════════════════════════════════════════ -->
+<div id="termsModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm hidden opacity-0 transition-opacity duration-300">
+  <div class="bg-white dark:bg-gray-900 rounded-2xl shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto transform transition-transform duration-300 scale-95">
+    <!-- Modal Header -->
+    <div class="sticky top-0 bg-gradient-to-r from-blue-700 to-indigo-700 text-white p-6 flex items-center justify-between z-10">
+      <h2 class="text-2xl font-poppins font-bold">Important Information</h2>
+      <button onclick="closeTermsModal()" class="text-white hover:bg-white/20 p-2 rounded-lg transition-colors" aria-label="Close">
+        <i class="fas fa-times text-xl"></i>
+      </button>
+    </div>
+
+    <!-- Modal Content -->
+    <div class="p-8 space-y-6">
+      <!-- Key Points Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+        <!-- Enrollment -->
+        <div class="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-4 border-l-4 border-blue-600">
+          <h3 class="font-poppins font-bold text-gray-900 dark:text-white mb-2 flex items-center gap-2">
+            <i class="fas fa-clipboard-check text-blue-600"></i> Enrollment
+          </h3>
+          <p class="text-gray-700 dark:text-gray-300 text-sm">
+            By registering and making payment, you agree to all Terms & Conditions. We reserve the right to accept or decline enrollment.
+          </p>
+        </div>
+
+        <!-- Non-Refundable Fees -->
+        <div class="bg-red-50 dark:bg-red-900/20 rounded-lg p-4 border-l-4 border-red-600">
+          <h3 class="font-poppins font-bold text-gray-900 dark:text-white mb-2 flex items-center gap-2">
+            <i class="fas fa-ban text-red-600"></i> Non-Refundable Fees
+          </h3>
+          <p class="text-gray-700 dark:text-gray-300 text-sm font-semibold text-red-700 dark:text-red-400">
+            All fees paid are strictly non-refundable. No exceptions.
+          </p>
+        </div>
+
+        <!-- Code of Conduct -->
+        <div class="bg-green-50 dark:bg-green-900/20 rounded-lg p-4 border-l-4 border-green-600">
+          <h3 class="font-poppins font-bold text-gray-900 dark:text-white mb-2 flex items-center gap-2">
+            <i class="fas fa-handshake text-green-600"></i> Code of Conduct
+          </h3>
+          <p class="text-gray-700 dark:text-gray-300 text-sm">
+            Maintain respectful behavior. Harassment, recording sessions, or sharing materials may result in termination without refund.
+          </p>
+        </div>
+
+        <!-- No Recording -->
+        <div class="bg-orange-50 dark:bg-orange-900/20 rounded-lg p-4 border-l-4 border-orange-600">
+          <h3 class="font-poppins font-bold text-gray-900 dark:text-white mb-2 flex items-center gap-2">
+            <i class="fas fa-video-slash text-orange-600"></i> No Recording
+          </h3>
+          <p class="text-gray-700 dark:text-gray-300 text-sm">
+            Recording, screen-capturing, or sharing session content without permission is strictly prohibited.
+          </p>
+        </div>
+
+        <!-- Intellectual Property -->
+        <div class="bg-purple-50 dark:bg-purple-900/20 rounded-lg p-4 border-l-4 border-purple-600">
+          <h3 class="font-poppins font-bold text-gray-900 dark:text-white mb-2 flex items-center gap-2">
+            <i class="fas fa-copyright text-purple-600"></i> Course Materials
+          </h3>
+          <p class="text-gray-700 dark:text-gray-300 text-sm">
+            All course materials are our intellectual property. Personal use only — sharing or redistribution is prohibited.
+          </p>
+        </div>
+
+        <!-- WhatsApp Consent -->
+        <div class="bg-teal-50 dark:bg-teal-900/20 rounded-lg p-4 border-l-4 border-teal-600">
+          <h3 class="font-poppins font-bold text-gray-900 dark:text-white mb-2 flex items-center gap-2">
+            <i class="fas fa-comments text-teal-600"></i> WhatsApp Updates
+          </h3>
+          <p class="text-gray-700 dark:text-gray-300 text-sm">
+            By enrolling, you consent to receive WhatsApp messages about course updates, schedules, and announcements.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Important Notice -->
+      <div class="bg-red-50 dark:bg-red-900/20 border-2 border-red-300 dark:border-red-700 rounded-lg p-4 mt-4">
+        <h3 class="font-poppins font-bold text-red-700 dark:text-red-400 mb-2 flex items-center gap-2">
+          <i class="fas fa-exclamation-triangle"></i> Governing Law
+        </h3>
+        <p class="text-red-800 dark:text-red-300 text-sm">
+          These Terms & Conditions are governed by the laws of India and are subject to the jurisdiction of courts in Hyderabad, Telangana. Contact: <strong>+91 81250 95061</strong>.
+        </p>
+      </div>
+
+      <!-- CTA to Full Terms -->
+      <div class="flex gap-3 pt-4 border-t border-gray-200 dark:border-gray-700">
+        <button onclick="closeTermsModal()" class="flex-1 bg-gray-300 hover:bg-gray-400 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-900 dark:text-white font-semibold py-2 rounded-lg transition-colors">
+          Close
+        </button>
+        <a href="html/terms.html" target="_blank" class="flex-1 inline-flex items-center justify-center gap-2 bg-blue-700 hover:bg-blue-800 text-white font-semibold py-2 rounded-lg transition-colors">
+          <i class="fas fa-file-pdf"></i> Read Full Terms
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════════ -->
+<footer class="bg-gray-900 dark:bg-gray-950 text-white pt-16 pb-8">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+
+      <!-- Brand -->
+      <div class="lg:col-span-2">
+        <div class="flex items-center gap-3 mb-4">
+          <img src="images/PSAVBLogo.png" alt="PS AVB Learning Hub" class="h-12 w-auto rounded-xl shadow-lg" />
+          <div>
+            <div class="font-poppins font-extrabold text-xl text-white">PS AVB Learning Hub</div>
+            <div class="text-blue-400 text-sm">Abacus | Vedic Math | Brain Development</div>
+          </div>
+        </div>
+        <p class="text-gray-400 text-sm max-w-xs mb-5">
+          Sharpen Young Minds with Abacus, Vedic Math &amp; Brain Gym. Join hundreds of families who trust us for their child's academic journey.
+        </p>
+        <!-- Social Links -->
+        <div class="flex items-center gap-3">
+          <a href="https://wa.me/919876543210" target="_blank" rel="noopener"
+            class="w-9 h-9 rounded-xl bg-green-600 hover:bg-green-500 flex items-center justify-center transition-colors"
+            aria-label="WhatsApp">
+            <i class="fab fa-whatsapp text-sm"></i>
+          </a>
+          <a href="#" class="w-9 h-9 rounded-xl bg-pink-600 hover:bg-pink-500 flex items-center justify-center transition-colors" aria-label="Instagram">
+            <i class="fab fa-instagram text-sm"></i>
+          </a>
+          <a href="#" class="w-9 h-9 rounded-xl bg-blue-700 hover:bg-blue-600 flex items-center justify-center transition-colors" aria-label="Facebook">
+            <i class="fab fa-facebook-f text-sm"></i>
+          </a>
+          <a href="#" class="w-9 h-9 rounded-xl bg-red-600 hover:bg-red-500 flex items-center justify-center transition-colors" aria-label="YouTube">
+            <i class="fab fa-youtube text-sm"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Courses -->
+      <div>
+        <h4 class="font-poppins font-bold text-sm uppercase tracking-widest text-gray-400 mb-4">Courses</h4>
+        <ul class="space-y-2.5 text-sm text-gray-400">
+          <li><a href="#modules" class="hover:text-white transition-colors flex items-center gap-2"><span>🔢</span> Abacus</a></li>
+          <li><a href="#modules" class="hover:text-white transition-colors flex items-center gap-2"><span>🧮</span> Vedic Math</a></li>
+          <li><a href="#modules" class="hover:text-white transition-colors flex items-center gap-2"><span>🧠</span> Brain Gym</a></li>
+          <li><a href="#contact" class="hover:text-white transition-colors flex items-center gap-2"><span>📚</span> All Courses Bundle</a></li>
+        </ul>
+      </div>
+
+      <!-- Quick Links + Legal -->
+      <div>
+        <h4 class="font-poppins font-bold text-sm uppercase tracking-widest text-gray-400 mb-4">Quick Links</h4>
+        <ul class="space-y-2.5 text-sm text-gray-400 mb-6">
+          <li><a href="#why-us"   class="hover:text-white transition-colors">Why Choose Us</a></li>
+          <li><a href="#outcomes" class="hover:text-white transition-colors">Outcomes &amp; Stats</a></li>
+          <li><a href="#contact"  class="hover:text-white transition-colors">Enroll Now</a></li>
+          <li>
+            <a href="tool/abacus.html" class="inline-flex items-center gap-1.5 text-blue-400 hover:text-white transition-colors font-semibold">
+              <i class="fas fa-calculator text-xs"></i> Student Digital Abacus Tool
+            </a>
+          </li>
+        </ul>
+        <h4 class="font-poppins font-bold text-sm uppercase tracking-widest text-gray-400 mb-3">Legal</h4>
+        <ul class="space-y-2 text-sm text-gray-400">
+          <li><a href="html/terms.html"          class="hover:text-white transition-colors">Terms &amp; Conditions</a></li>
+          <li><a href="html/terms.html#privacy"  class="hover:text-white transition-colors">Privacy Policy</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Divider -->
+    <div class="border-t border-gray-800 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-gray-500">
+      <p>&copy; 2026 <strong>PS - AVB</strong> Learning Hub. All rights reserved.</p>
+      <p>Abacus | Vedic Math | Brain Development</p>
+    </div>
+  </div>
+</footer>
+
+
+
+
+<!-- App JS -->
+<script>
+/* Terms Modal Functions */
+function openTermsModal() {
+  const modal = document.getElementById('termsModal');
+  modal.classList.remove('hidden');
+  setTimeout(() => modal.classList.remove('opacity-0'), 10);
+}
+
+function closeTermsModal() {
+  const modal = document.getElementById('termsModal');
+  modal.classList.add('opacity-0');
+  setTimeout(() => modal.classList.add('hidden'), 300);
+}
+
+/* Close modal when clicking outside */
+document.addEventListener('DOMContentLoaded', function() {
+  const modal = document.getElementById('termsModal');
+  modal.addEventListener('click', function(e) {
+    if (e.target === modal) {
+      closeTermsModal();
+    }
+  });
+
+  /* Close on Escape key */
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+      closeTermsModal();
+    }
+  });
+});
+</script>
+
+<script src="js/app.js"></script>
+</body>
+</html>
