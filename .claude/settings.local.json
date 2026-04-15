@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(start \"C:/Users/bsecu/Desktop/Vibe Coding Projects/PSAVB-Learning Hub/index.html\")",
+      "Bash(grep -rn src=\"\"[^h] 'C:/Users/bsecu/Desktop/Vibe Coding Projects/PSAVB-Learning Hub/index.html' 'C:/Users/bsecu/Desktop/Vibe Coding Projects/PSAVB-Learning Hub/terms.html')",
+      "Bash(head -20 grep -n 'src=\\\\|href=\\\\|access-codes\\\\|abacus' \"C:/Users/bsecu/Desktop/Vibe Coding Projects/PSAVB-Learning Hub/tmp/abacus-access.html\")",
+      "Bash(head -20 grep -n 'href=\\\\|src=' \"C:/Users/bsecu/Desktop/Vibe Coding Projects/PSAVB-Learning Hub/tool/abacus.html\")"
+    ]
+  }
+}

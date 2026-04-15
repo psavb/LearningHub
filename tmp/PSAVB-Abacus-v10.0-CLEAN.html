@@ -1,0 +1,1404 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="psavb" data-font="modern">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#1a0e05">
+<title>PSAVI Abacus Tool v10.0</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&family=M+PLUS+Rounded+1c:wght@400;700;800&family=Cinzel:wght@400;700;900&family=Playfair+Display:wght@400;700;900&family=Orbitron:wght@400;700;900&family=Caveat:wght@400;700&family=Patrick+Hand&family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════════════════
+   PSAVI SOROBAN — Full Mode / Zen Mode / Themes / Fonts
+   ═══════════════════════════════════════════════════════ */
+
+/* ── Reset ── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;overscroll-behavior:none;}
+
+/* ════════════════════════════════════════════════════════
+   THEME VARIABLES
+   Each theme overrides: --bg, --bg2, frame/bead/gold colours
+   ════════════════════════════════════════════════════════ */
+
+/* ── Classic (dark wood / cinnabar) ── */
+[data-theme="classic"] {
+  --bg:    #0f0803; --bg2: #1a0e05;
+  --panel: #120800; --panel2: #1c0e04;
+  --border:#7a5818; --border2:#5a3808;
+  --gold1: #f0cc60; --gold2: #d4a844; --gold3: #7a5818;
+  --frame1:#7a4820; --frame2:#4e2a0e; --frame3:#1a0802; --frame4:#2e1506;
+  --beam1: #d09050; --beam2: #7a4820; --beam3: #2a1208;
+  --shaft1:#7a5818; --shaft2:#d4a844;
+  --rod-bg1:#080402; --rod-bg2:#100804;
+  --bu1:#f05040; --bu2:#c82020; --bu3:#7a0808;
+  --bu-on1:#ff7060; --bu-on2:#ff2020;
+  --bl1:#2a5acc; --bl2:#1a2e5a; --bl3:#0a1530;
+  --bl-on1:#5080ff; --bl-on2:#1050e0;
+  --txt1:#f0cc60; --txt2:#886030; --txt3:#fff8ec;
+  --ctrl-inp:#0a0602; --prac-bg1:#080d04; --prac-bg2:#0c1208;
+  --prac-brd:#2a5020; --prac-txt:#80ffb0;
+  --vbg1:#0c0600; --vbg2:#160a02;
+}
+
+/* ── Bamboo (green / natural) ── */
+[data-theme="bamboo"] {
+  --bg:    #050f04; --bg2: #0a180a;
+  --panel: #060e06; --panel2: #0c180c;
+  --border:#3a6020; --border2:#284018;
+  --gold1: #a0e060; --gold2: #70b840; --gold3: #3a6020;
+  --frame1:#3a6820; --frame2:#223c12; --frame3:#0a1806; --frame4:#162810;
+  --beam1: #70b840; --beam2: #3a6020; --beam3: #1a3010;
+  --shaft1:#3a6020; --shaft2:#90d050;
+  --rod-bg1:#040c04; --rod-bg2:#081408;
+  --bu1:#e0a020; --bu2:#b07818; --bu3:#604008;
+  --bu-on1:#f0c030; --bu-on2:#d09020;
+  --bl1:#40b060; --bl2:#206840; --bl3:#103820;
+  --bl-on1:#60d080; --bl-on2:#30a060;
+  --txt1:#a0e060; --txt2:#508030; --txt3:#e0ffe0;
+  --ctrl-inp:#040c04; --prac-bg1:#050a04; --prac-bg2:#080c06;
+  --prac-brd:#306020; --prac-txt:#a0f080;
+  --vbg1:#060e04; --vbg2:#0c1808;
+}
+
+/* ── Midnight (deep blue / silver) ── */
+[data-theme="midnight"] {
+  --bg:    #030812; --bg2: #08101e;
+  --panel: #060c1a; --panel2: #0a1220;
+  --border:#2a4080; --border2:#182850;
+  --gold1: #80b0ff; --gold2: #5080d0; --gold3: #2a4080;
+  --frame1:#1a2a60; --frame2:#101840; --frame3:#060c20; --frame4:#0c1430;
+  --beam1: #4060c0; --beam2: #202880; --beam3: #080c30;
+  --shaft1:#2a4080; --shaft2:#6080d0;
+  --rod-bg1:#040610; --rod-bg2:#080c1c;
+  --bu1:#e04080; --bu2:#a02060; --bu3:#600830;
+  --bu-on1:#ff60a0; --bu-on2:#e02080;
+  --bl1:#4080e0; --bl2:#2050a0; --bl3:#102060;
+  --bl-on1:#60a0ff; --bl-on2:#3070e0;
+  --txt1:#80b0ff; --txt2:#405080; --txt3:#c0d8ff;
+  --ctrl-inp:#040610; --prac-bg1:#040812; --prac-bg2:#080c18;
+  --prac-brd:#204080; --prac-txt:#80c0ff;
+  --vbg1:#060a18; --vbg2:#0a1020;
+}
+
+/* ── Sakura (pink / cream) ── */
+[data-theme="sakura"] {
+  --bg:    #1a0812; --bg2: #260c1a;
+  --panel: #1e0c16; --panel2: #28101e;
+  --border:#803060; --border2:#602040;
+  --gold1: #ffb0d0; --gold2: #e080a0; --gold3: #803060;
+  --frame1:#8a3060; --frame2:#601840; --frame3:#200810; --frame4:#3a1020;
+  --beam1: #e080a0; --beam2: #8a3060; --beam3: #300c20;
+  --shaft1:#803060; --shaft2:#f0a0c0;
+  --rod-bg1:#120608; --rod-bg2:#1c0c12;
+  --bu1:#ff80a0; --bu2:#d04070; --bu3:#801030;
+  --bu-on1:#ffa0c0; --bu-on2:#ff4080;
+  --bl1:#c060a0; --bl2:#803070; --bl3:#401040;
+  --bl-on1:#e080c0; --bl-on2:#c050a0;
+  --txt1:#ffb0d0; --txt2:#a05070; --txt3:#ffe0ec;
+  --ctrl-inp:#120608; --prac-bg1:#100610; --prac-bg2:#180a16;
+  --prac-brd:#602848; --prac-txt:#ffb0d0;
+  --vbg1:#160810; --vbg2:#200c18;
+}
+
+/* ── PS AVB (website brand — navy / blue / orange) ── */
+[data-theme="psavb"] {
+  --bg:    #060e1f; --bg2: #0a1628;
+  --panel: #0d1d38; --panel2: #0f2050;
+  --border:#1e40af; --border2:#1e3a8f;
+  --gold1: #f59e0b; --gold2: #d97706; --gold3: #1e40af;
+  --frame1:#1e3a8f; --frame2:#1e2d6b; --frame3:#0a1230; --frame4:#0f1a40;
+  --beam1: #2563eb; --beam2: #1e40af; --beam3: #0f2050;
+  --shaft1:#1e40af; --shaft2:#3b82f6;
+  --rod-bg1:#060e1f; --rod-bg2:#0a1628;
+  --bu1:#ea580c; --bu2:#c2410c; --bu3:#7c2d12;
+  --bu-on1:#f97316; --bu-on2:#ea580c;
+  --bl1:#2563eb; --bl2:#1d4ed8; --bl3:#1e3a8f;
+  --bl-on1:#3b82f6; --bl-on2:#2563eb;
+  --txt1:#93c5fd; --txt2:#475569; --txt3:#dbeafe;
+  --ctrl-inp:#060e1f; --prac-bg1:#061020; --prac-bg2:#0a1628;
+  --prac-brd:#1e40af; --prac-txt:#60a5fa;
+  --vbg1:#080f20; --vbg2:#0d1830;
+}
+
+/* ── Ivory (light / cream — for bright rooms) ── */
+[data-theme="ivory"] {
+  --bg:    #f5efe0; --bg2: #ede4d0;
+  --panel: #e8dfc8; --panel2: #dfd4ba;
+  --border:#8a6838; --border2:#6a5028;
+  --gold1: #6a3808; --gold2: #8a5020; --gold3: #b07840;
+  --frame1:#a07040; --frame2:#7a5028; --frame3:#3a2010; --frame4:#5a3818;
+  --beam1: #8a6030; --beam2: #6a4020; --beam3: #3a2010;
+  --shaft1:#8a6030; --shaft2:#c09050;
+  --rod-bg1:#ddd4c0; --rod-bg2:#d0c8b0;
+  --bu1:#c03020; --bu2:#902010; --bu3:#600808;
+  --bu-on1:#e04030; --bu-on2:#c02818;
+  --bl1:#2050a0; --bl2:#103070; --bl3:#081840;
+  --bl-on1:#3070c0; --bl-on2:#1850a0;
+  --txt1:#5a3010; --txt2:#8a6030; --txt3:#3a1808;
+  --ctrl-inp:#e8dfc8; --prac-bg1:#e0d8c0; --prac-bg2:#d8ceb0;
+  --prac-brd:#6a5028; --prac-txt:#3a6010;
+  --vbg1:#e8dfc8; --vbg2:#dfd4ba;
+}
+
+/* ════════════════════════════════════════════════════════
+   FONT THEMES
+   ════════════════════════════════════════════════════════ */
+[data-font="japanese"]  { --ff-head:'Noto Serif JP',serif;       --ff-body:'M PLUS Rounded 1c',sans-serif; }
+[data-font="classical"] { --ff-head:'Cinzel',serif;               --ff-body:'Playfair Display',serif; }
+[data-font="digital"]   { --ff-head:'Orbitron',sans-serif;        --ff-body:'Nunito',sans-serif; }
+[data-font="handwritten"]{ --ff-head:'Caveat',cursive;            --ff-body:'Patrick Hand',cursive; }
+[data-font="modern"]    { --ff-head:'Nunito',sans-serif;          --ff-body:'Nunito',sans-serif; }
+
+/* ════════════════════════════════════════════════════════
+   BASE LAYOUT
+   ════════════════════════════════════════════════════════ */
+body {
+  background: var(--bg);
+  font-family: var(--ff-body, 'M PLUS Rounded 1c', sans-serif);
+  min-height: 100vh;
+  display: -webkit-flex; display: flex;
+  -webkit-flex-direction: column; flex-direction: column;
+  -webkit-align-items: center; align-items: center;
+  padding: 10px 6px 32px;
+  overflow-x: hidden;
+  -webkit-transition: background .4s ease, color .4s ease;
+  transition: background .4s ease, color .4s ease;
+}
+body::before {
+  content:''; position:fixed; inset:0; pointer-events:none; z-index:0;
+  background:
+    radial-gradient(ellipse at 15% 10%, rgba(80,30,5,.2) 0%, transparent 55%),
+    radial-gradient(ellipse at 85% 85%, rgba(40,15,3,.2) 0%, transparent 55%);
+}
+body > * { position:relative; z-index:1; }
+
+@keyframes fd { from{opacity:0;transform:translateY(-10px)} to{opacity:1;transform:translateY(0)} }
+@keyframes zenFade { from{opacity:0} to{opacity:1} }
+@keyframes pulse { 0%,100%{opacity:.6} 50%{opacity:1} }
+
+/* ════════════════════════════════════════════════════════
+   TOP BAR — holds title + mode/theme/font controls
+   ════════════════════════════════════════════════════════ */
+.topbar {
+  width:100%; max-width:900px;
+  display:-webkit-flex; display:flex;
+  -webkit-align-items:center; align-items:center;
+  -webkit-justify-content:space-between; justify-content:space-between;
+  gap:8px; flex-wrap:wrap;
+  margin-bottom:8px;
+  animation: fd .5s ease both;
+}
+.hdr { text-align:center; flex:1; min-width:0; }
+.inst-name {
+  font-family: var(--ff-head);
+  font-weight:900; font-size:clamp(.9rem,3vw,1.55rem);
+  color:var(--gold1); letter-spacing:.12em;
+  text-shadow:0 0 22px rgba(240,192,96,.4),0 2px 4px rgba(0,0,0,.8);
+  -webkit-transition: all .4s; transition: all .4s;
+}
+.inst-sub { font-size:clamp(.55rem,1.7vw,.78rem); color:var(--txt2); letter-spacing:.14em; margin-top:2px; }
+
+/* ── Mode / settings icon buttons ── */
+.topbtns {
+  display:-webkit-flex; display:flex; gap:6px; flex-shrink:0;
+}
+.icon-btn {
+  background: var(--panel);
+  border: 1.5px solid var(--border);
+  border-radius:8px; padding:7px 10px;
+  cursor:pointer; color:var(--gold1); font-size:16px;
+  min-width:40px; min-height:40px;
+  display:-webkit-inline-flex; display:inline-flex;
+  -webkit-align-items:center; align-items:center;
+  -webkit-justify-content:center; justify-content:center;
+  -webkit-transition: all .2s; transition: all .2s;
+  -webkit-appearance:none; appearance:none;
+  position:relative;
+}
+.icon-btn:active { opacity:.7; transform:scale(.93); }
+.icon-btn.active { background:var(--gold2); color:var(--bg); border-color:var(--gold1); }
+.icon-btn[title]:hover::after {
+  content: attr(title);
+  position:absolute; bottom:calc(100% + 6px); left:50%;
+  transform:translateX(-50%);
+  background:rgba(0,0,0,.85); color:#fff;
+  font-size:11px; white-space:nowrap; padding:3px 8px; border-radius:4px;
+  pointer-events:none; z-index:999;
+}
+
+/* ════════════════════════════════════════════════════════
+   SETTINGS DRAWER
+   ════════════════════════════════════════════════════════ */
+.settings-drawer {
+  width:100%; max-width:900px;
+  background: var(--panel);
+  border:1.5px solid var(--border);
+  border-radius:10px; padding:12px 16px;
+  margin-bottom:8px;
+  display:none;
+  -webkit-flex-wrap:wrap; flex-wrap:wrap;
+  gap:16px;
+  -webkit-align-items:flex-start; align-items:flex-start;
+  animation: fd .3s ease both;
+}
+.settings-drawer.open { display:-webkit-flex; display:flex; }
+
+.sgroup { display:-webkit-flex; display:flex; -webkit-flex-direction:column; flex-direction:column; gap:8px; min-width:180px; }
+.sgroup-title { font-size:11px; letter-spacing:.15em; color:#aaa; text-transform:uppercase; font-weight:700; }
+
+/* ── Theme dropdown — always readable, hardcoded colours ── */
+.theme-select {
+  width:100%; padding:9px 12px;
+  background: #1a1208;
+  color: #f0cc60;
+  border: 2px solid #7a5818;
+  border-radius:7px; cursor:pointer;
+  font-size:14px; font-weight:700; letter-spacing:.06em;
+  outline:none;
+  -webkit-appearance:none; appearance:none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='10'%3E%3Cpath d='M0 0l7 10 7-10z' fill='%23d4a844'/%3E%3C/svg%3E");
+  background-repeat:no-repeat; background-position: right 12px center;
+  padding-right:34px;
+  -webkit-transition: border-color .2s; transition: border-color .2s;
+}
+.theme-select:focus { border-color:#f0cc60; }
+.theme-select option { background:#1a1208; color:#f0cc60; font-weight:600; padding:6px; }
+
+/* Preview strip shown below dropdown */
+.theme-preview {
+  display:-webkit-flex; display:flex; gap:5px;
+  -webkit-align-items:center; align-items:center;
+  padding:7px 10px; border-radius:6px; border:1.5px solid #7a5818;
+  background:#0f0803; min-height:36px;
+}
+.tp-dot { width:18px; height:18px; border-radius:50%; flex-shrink:0; border:2px solid rgba(255,255,255,.25); }
+.tp-label { font-size:11px; color:#c8a040; letter-spacing:.08em; margin-left:6px; font-weight:700; }
+
+/* ── Font buttons — always readable, hardcoded ── */
+.font-btns { display:-webkit-flex; display:flex; gap:6px; flex-wrap:wrap; }
+.font-btn {
+  padding:7px 12px; border-radius:6px; cursor:pointer; font-size:13px; font-weight:700;
+  /* Hardcoded so never blends into background */
+  background: #2a1e08;
+  border: 2px solid #7a5818;
+  color: #f0cc60;
+  -webkit-transition: all .15s; transition: all .15s;
+  -webkit-appearance:none; appearance:none; white-space:nowrap;
+  letter-spacing:.04em;
+}
+.font-btn:active { opacity:.7; }
+.font-btn.sel {
+  background: #d4a844;
+  color: #1a0e04;
+  border-color: #f0cc60;
+  box-shadow: 0 0 10px rgba(212,168,68,.4);
+}
+.font-btn[data-f="japanese"]   { font-family:'Noto Serif JP',serif; }
+.font-btn[data-f="classical"]  { font-family:'Cinzel',serif; }
+.font-btn[data-f="digital"]    { font-family:'Orbitron',sans-serif; font-size:11px; }
+.font-btn[data-f="handwritten"]{ font-family:'Caveat',cursive; font-size:15px; }
+.font-btn[data-f="modern"]     { font-family:'Nunito',sans-serif; }
+
+/* ════════════════════════════════════════════════════════
+   VALUE BAR
+   ════════════════════════════════════════════════════════ */
+.vbar {
+  display:-webkit-flex; display:flex;
+  -webkit-align-items:center; align-items:center;
+  -webkit-flex-wrap:wrap; flex-wrap:wrap;
+  -webkit-justify-content:center; justify-content:center;
+  gap:10px;
+  background: linear-gradient(135deg, var(--vbg1), var(--vbg2));
+  border:2px solid var(--border); border-radius:8px;
+  padding:8px 14px; margin-bottom:10px;
+  box-shadow: inset 0 2px 10px rgba(0,0,0,.6), 0 0 16px rgba(0,0,0,.3);
+  animation:fd .5s .1s ease both; width:100%; max-width:900px;
+  -webkit-transition: all .4s; transition: all .4s;
+}
+.vlbl { font-size:clamp(.56rem,1.7vw,.7rem); color:var(--txt2); letter-spacing:.16em; white-space:nowrap; }
+#vdisp {
+  font-family: var(--ff-head);
+  font-weight:700; font-size:clamp(1.2rem,4vw,2rem);
+  color:var(--gold1); letter-spacing:.06em;
+  text-shadow:0 0 18px rgba(240,192,96,.5);
+  min-width:160px; text-align:center;
+  -webkit-transition: filter .3s, opacity .3s, color .4s; transition: filter .3s, opacity .3s, color .4s;
+}
+#vdisp.blr { -webkit-filter:blur(7px); filter:blur(7px); opacity:.35; }
+
+/* ════════════════════════════════════════════════════════
+   ABACUS SCROLL WRAPPER
+   ════════════════════════════════════════════════════════ */
+.asc {
+  width:100%; overflow-x:auto; -webkit-overflow-scrolling:touch;
+  display:-webkit-flex; display:flex;
+  -webkit-justify-content:center; justify-content:center;
+  animation:fd .5s .15s ease both;
+  scrollbar-width:thin; scrollbar-color:var(--border) transparent;
+}
+.asc::-webkit-scrollbar { height:4px; }
+.asc::-webkit-scrollbar-thumb { background:var(--border); border-radius:2px; }
+
+/* ════════════════════════════════════════════════════════
+   ABACUS FRAME
+   ════════════════════════════════════════════════════════ */
+.afrm {
+  background: linear-gradient(170deg, var(--frame1) 0%, var(--frame2) 50%, var(--frame3) 100%);
+  border-radius:14px; padding:16px 10px 14px;
+  position:relative; flex-shrink:0;
+  box-shadow:
+    0 0 0 3px var(--gold3),
+    0 0 0 6px var(--frame4),
+    0 0 0 9px var(--gold3),
+    inset 0 2px 8px rgba(255,200,100,.07),
+    0 16px 50px rgba(0,0,0,.8);
+  -webkit-transition: background .4s, box-shadow .4s; transition: background .4s, box-shadow .4s;
+}
+.co { position:absolute; width:18px; height:18px; border:2px solid var(--gold2); border-radius:2px; pointer-events:none; z-index:10; }
+.co-tl{top:7px;left:7px;border-right:none;border-bottom:none;}
+.co-tr{top:7px;right:7px;border-left:none;border-bottom:none;}
+.co-bl{bottom:7px;left:7px;border-right:none;border-top:none;}
+.co-br{bottom:7px;right:7px;border-left:none;border-top:none;}
+
+/* Column headers */
+.chdr { display:-webkit-flex; display:flex; margin-bottom:5px; }
+.ch {
+  text-align:center; font-size:9px; line-height:1.4; white-space:nowrap;
+  overflow:hidden; flex-shrink:0;
+  font-weight:700; letter-spacing:.02em;
+  color: var(--ch-color, #c8a040);
+  text-shadow: 0 0 6px var(--ch-glow, rgba(200,160,60,.5));
+  -webkit-transition: color .4s; transition: color .4s;
+}
+/* Units rod header — bright white, larger */
+.ch.units-rod {
+  color: #ffffff !important;
+  font-size: 10px;
+  text-shadow: 0 0 8px rgba(255,255,255,.9), 0 0 16px rgba(255,255,255,.5);
+}
+/* Integer-side headers (left of units) */
+.ch.int-rod  { color: var(--bu1, #f05040); text-shadow: 0 0 5px rgba(240,80,64,.45); }
+/* Decimal-side headers (right of units) */
+.ch.dec-rod  { color: var(--bl1, #2a5acc); text-shadow: 0 0 5px rgba(42,90,204,.45); }
+
+/* Rods strip */
+.rstrip {
+  display:-webkit-flex; display:flex;
+  background: linear-gradient(180deg, var(--rod-bg1), var(--rod-bg2) 60%, var(--rod-bg1));
+  border-radius:6px; padding:0 5px;
+  border:1px solid rgba(128,64,16,.4);
+  box-shadow:inset 0 4px 20px rgba(0,0,0,.6);
+  -webkit-transition: background .4s; transition: background .4s;
+}
+
+/* Single rod */
+.rod { display:-webkit-flex; display:flex; -webkit-flex-direction:column; flex-direction:column; -webkit-align-items:center; align-items:center; flex-shrink:0; }
+.usec,.lsec { width:100%; position:relative; }
+
+/* Beam */
+.beam {
+  width:100%; flex-shrink:0; position:relative; z-index:5; border-radius:3px;
+  background: linear-gradient(180deg, var(--beam1) 0%, var(--beam2) 50%, var(--beam3) 100%);
+  box-shadow:0 2px 6px rgba(0,0,0,.6), inset 0 1px 2px rgba(255,200,100,.18);
+  -webkit-transition: background .4s; transition: background .4s;
+}
+.beam.mk::before {
+  content:''; position:absolute; top:50%; left:50%;
+  -webkit-transform:translate(-50%,-50%); transform:translate(-50%,-50%);
+  width:7px; height:7px; background:var(--gold1); border-radius:50%;
+  box-shadow:0 0 6px var(--gold1);
+}
+.beam.mk-units { background:linear-gradient(180deg,#ffffff 0%,var(--beam1) 30%,var(--beam2) 70%,var(--beam3) 100%); }
+.beam.mk-units::before { width:10px; height:10px; background:#fff; box-shadow:0 0 10px #fff,0 0 22px rgba(255,255,255,.5); }
+
+/* Shaft */
+.shaft {
+  position:absolute; top:0; bottom:0; left:50%;
+  -webkit-transform:translateX(-50%); transform:translateX(-50%);
+  background: linear-gradient(90deg, var(--shaft1), var(--shaft2), var(--shaft1));
+  border-radius:3px; box-shadow:0 0 5px rgba(212,168,68,.25);
+  z-index:1; pointer-events:none;
+  -webkit-transition: background .4s; transition: background .4s;
+}
+
+/* ════════════════════════════════════════════════════════
+   BEADS
+   ════════════════════════════════════════════════════════ */
+.bead {
+  position:absolute; left:50%;
+  -webkit-transform:translateX(-50%); transform:translateX(-50%);
+  border-radius:50%; z-index:3; cursor:pointer;
+  -webkit-transition:top .22s cubic-bezier(.34,1.4,.64,1); transition:top .22s cubic-bezier(.34,1.4,.64,1);
+  user-select:none; -webkit-user-select:none;
+  -webkit-tap-highlight-color:transparent; touch-action:none;
+  -webkit-transition: top .22s cubic-bezier(.34,1.4,.64,1), background .4s;
+  transition: top .22s cubic-bezier(.34,1.4,.64,1), background .4s;
+}
+.bead::after {
+  content:''; position:absolute; top:18%; left:18%; width:30%; height:22%;
+  background:rgba(255,255,255,.25); border-radius:50%;
+  -webkit-transform:rotate(-22deg); transform:rotate(-22deg); pointer-events:none;
+}
+.bu {
+  background:-webkit-radial-gradient(35% 35%,ellipse,var(--bu1),var(--bu2) 55%,var(--bu3));
+  background:radial-gradient(ellipse at 35% 35%,var(--bu1),var(--bu2) 55%,var(--bu3));
+  box-shadow:0 3px 10px rgba(0,0,0,.55),inset 0 -2px 4px rgba(0,0,0,.3);
+}
+.bu.on {
+  background:-webkit-radial-gradient(35% 35%,ellipse,var(--bu-on1),var(--bu-on2) 55%,var(--bu3));
+  background:radial-gradient(ellipse at 35% 35%,var(--bu-on1),var(--bu-on2) 55%,var(--bu3));
+  box-shadow:0 3px 16px rgba(200,40,40,.5),inset 0 -2px 4px rgba(0,0,0,.3);
+}
+.bl {
+  background:-webkit-radial-gradient(35% 35%,ellipse,var(--bl1),var(--bl2) 55%,var(--bl3));
+  background:radial-gradient(ellipse at 35% 35%,var(--bl1),var(--bl2) 55%,var(--bl3));
+  box-shadow:0 3px 10px rgba(0,0,0,.55),inset 0 -2px 4px rgba(0,0,0,.3);
+}
+.bl.on {
+  background:-webkit-radial-gradient(35% 35%,ellipse,var(--bl-on1),var(--bl-on2) 55%,var(--bl3));
+  background:radial-gradient(ellipse at 35% 35%,var(--bl-on1),var(--bl-on2) 55%,var(--bl3));
+  box-shadow:0 3px 16px rgba(30,80,220,.5),inset 0 -2px 4px rgba(0,0,0,.3);
+}
+.bead:active { opacity:.72; }
+
+/* ════════════════════════════════════════════════════════
+   CONTROLS PANEL
+   ════════════════════════════════════════════════════════ */
+.ctrl {
+  background:linear-gradient(135deg,var(--panel),var(--panel2));
+  border:1.5px solid var(--border); border-radius:10px;
+  padding:10px 14px; margin-top:10px;
+  display:-webkit-flex; display:flex; -webkit-flex-wrap:wrap; flex-wrap:wrap;
+  gap:8px; -webkit-align-items:center; align-items:center;
+  -webkit-justify-content:center; justify-content:center;
+  animation:fd .5s .25s ease both; width:100%; max-width:900px;
+  -webkit-transition: all .4s; transition: all .4s;
+}
+.crow { display:-webkit-flex; display:flex; -webkit-align-items:center; align-items:center; -webkit-flex-wrap:wrap; flex-wrap:wrap; gap:6px; -webkit-justify-content:center; justify-content:center; }
+.clbl { font-size:clamp(.56rem,1.7vw,.68rem); color:var(--txt2); letter-spacing:.1em; white-space:nowrap; }
+.cinp {
+  background:var(--ctrl-inp); border:1.5px solid var(--border); border-radius:5px;
+  color:var(--gold1); font-family:var(--ff-head); font-weight:700;
+  padding:8px 10px; width:140px; text-align:center; outline:none;
+  font-size:16px; -webkit-appearance:none; appearance:none;
+  -webkit-transition: border-color .2s, color .4s, background .4s; transition: border-color .2s, color .4s, background .4s;
+}
+.cinp:focus { border-color:var(--gold1); }
+
+/* Shared button */
+.btn {
+  font-family:var(--ff-body); font-weight:700; font-size:13px; letter-spacing:.07em;
+  padding:10px 16px; border-radius:6px; cursor:pointer; border:2px solid var(--border);
+  -webkit-transition: opacity .18s, background .4s, color .4s; transition: opacity .18s, background .4s, color .4s;
+  white-space:nowrap; min-height:44px; min-width:44px;
+  display:-webkit-inline-flex; display:inline-flex;
+  -webkit-align-items:center; align-items:center;
+  -webkit-justify-content:center; justify-content:center;
+  gap:4px; -webkit-appearance:none; appearance:none;
+}
+.btn:active { opacity:.72; transform:scale(.96); }
+.bset  { background:linear-gradient(135deg,#6a3010,#b05020); color:#fff8ec; }
+.btog  { background:linear-gradient(135deg,var(--panel),var(--panel2)); color:var(--gold2); }
+.brst  { background:linear-gradient(135deg,#3a0000,#700000); color:#f09090; border-color:#7a4040; }
+.bprac { background:linear-gradient(135deg,#003a20,#006040); color:#90ffcc; border-color:#006040; }
+.bchk  { background:linear-gradient(135deg,#004020,#007040); color:#80ffb0; border-color:#006030; }
+.bnxt  { background:linear-gradient(135deg,#203060,#305090); color:#90c0ff; border-color:#305090; }
+.sep   { width:1px; height:26px; background:linear-gradient(180deg,transparent,var(--border),transparent); flex-shrink:0; }
+
+/* ════════════════════════════════════════════════════════
+   PRACTICE PANEL
+   ════════════════════════════════════════════════════════ */
+.prac {
+  background:linear-gradient(135deg,var(--prac-bg1),var(--prac-bg2));
+  border:1.5px solid var(--prac-brd); border-radius:10px;
+  padding:12px 14px; margin-top:10px;
+  display:none; -webkit-flex-direction:column; flex-direction:column;
+  gap:10px; -webkit-align-items:center; align-items:center;
+  width:100%; max-width:900px;
+  -webkit-transition: all .4s; transition: all .4s;
+}
+.prac.on { display:-webkit-flex; display:flex; animation:fd .3s ease both; }
+.ptitle { font-family:var(--ff-head); font-size:clamp(.7rem,2.5vw,.88rem); color:var(--prac-txt); letter-spacing:.13em; }
+.drow   { display:-webkit-flex;display:flex;gap:6px;-webkit-align-items:center;align-items:center;-webkit-flex-wrap:wrap;flex-wrap:wrap;-webkit-justify-content:center;justify-content:center; }
+.dlbl   { font-size:12px; color:var(--txt2); letter-spacing:.1em; }
+.dsel   { background:var(--panel); border:1.5px solid var(--border); border-radius:4px; color:var(--gold1);
+          font-family:var(--ff-body),Arial,sans-serif; font-size:14px; padding:6px 8px; outline:none; cursor:pointer;
+          -webkit-appearance:none; appearance:none; }
+.qbox   { background:var(--panel); border:1.5px solid var(--prac-brd); border-radius:8px; padding:10px 16px; text-align:center; width:100%; }
+.qtxt   { font-family:var(--ff-head); font-size:clamp(1rem,4vw,1.55rem); font-weight:700; color:var(--txt3); letter-spacing:.07em; }
+.qhint  { font-size:clamp(.55rem,1.7vw,.66rem); color:var(--txt2); margin-top:3px; letter-spacing:.07em; }
+.prow   { display:-webkit-flex;display:flex;gap:8px;-webkit-align-items:center;align-items:center;-webkit-flex-wrap:wrap;flex-wrap:wrap;-webkit-justify-content:center;justify-content:center; }
+.pinp   { background:var(--panel); border:1.5px solid var(--prac-brd); border-radius:5px; color:var(--prac-txt);
+          font-family:var(--ff-head); font-weight:700; padding:8px 12px; width:130px;
+          text-align:center; outline:none; font-size:16px; -webkit-appearance:none; appearance:none; }
+.pinp:focus { border-color:var(--gold1); }
+.badge  { font-family:var(--ff-head); font-weight:700; font-size:clamp(.76rem,2.5vw,.96rem);
+          padding:7px 14px; border-radius:6px; letter-spacing:.07em; opacity:0;
+          -webkit-transition:opacity .3s; transition:opacity .3s; white-space:nowrap; }
+.badge.show { opacity:1; }
+.badge.ok   { background:rgba(0,120,40,.3); color:#60ff90; border:1.5px solid #00aa50; }
+.badge.err  { background:rgba(160,20,20,.3); color:#ff8080; border:1.5px solid #cc2020; }
+.scr  { font-size:clamp(.58rem,1.8vw,.73rem); color:var(--txt2); letter-spacing:.1em; text-align:center; }
+#sV   { color:var(--prac-txt); font-weight:700; }
+
+/* ════════════════════════════════════════════════════════
+   ZEN MODE OVERLAY
+   Full-screen immersive abacus — hides everything else
+   ════════════════════════════════════════════════════════ */
+.zen-overlay {
+  position:fixed; inset:0; z-index:1000;
+  background:var(--bg);
+  display:none; -webkit-flex-direction:column; flex-direction:column;
+  -webkit-align-items:center; align-items:center;
+  -webkit-justify-content:center; justify-content:center;
+  padding:12px;
+  overflow:hidden;
+}
+.zen-overlay.on { display:-webkit-flex; display:flex; animation:zenFade .4s ease both; }
+
+/* Zen value display — large, centred */
+.zen-vdisp {
+  font-family:var(--ff-head); font-weight:900;
+  font-size:clamp(2.5rem,10vw,5rem);
+  color:var(--gold1); text-align:center;
+  text-shadow:0 0 40px rgba(240,192,96,.4);
+  letter-spacing:.06em; margin-bottom:16px;
+  animation: pulse 3s ease infinite;
+  -webkit-transition: color .4s; transition: color .4s;
+}
+.zen-vdisp.blr { -webkit-filter:blur(12px); filter:blur(12px); opacity:.3; }
+
+/* Zen abacus scroll */
+.zen-asc {
+  overflow-x:auto; -webkit-overflow-scrolling:touch;
+  display:-webkit-flex; display:flex;
+  -webkit-justify-content:center; justify-content:center;
+  max-width:100%; scrollbar-width:none;
+}
+.zen-asc::-webkit-scrollbar { display:none; }
+
+/* Zen bottom bar */
+.zen-bar {
+  display:-webkit-flex; display:flex; gap:8px; flex-wrap:wrap;
+  -webkit-justify-content:center; justify-content:center;
+  margin-top:14px;
+}
+
+/* Zen floating exit button */
+.zen-exit {
+  position:fixed; top:14px; right:14px; z-index:1001;
+  background:rgba(0,0,0,.5); border:1.5px solid var(--border);
+  border-radius:8px; padding:8px 14px; cursor:pointer;
+  color:var(--gold1); font-size:13px; font-weight:700; letter-spacing:.08em;
+  -webkit-backdrop-filter:blur(4px); backdrop-filter:blur(4px);
+  -webkit-appearance:none; appearance:none; min-height:40px;
+  display:-webkit-inline-flex; display:inline-flex;
+  -webkit-align-items:center; align-items:center; gap:5px;
+}
+.zen-exit:active { opacity:.7; }
+
+/* ════════════════════════════════════════════════════════
+   FULL MODE — abacus fills the full page width
+   ════════════════════════════════════════════════════════ */
+body.fullmode .asc, body.fullmode .ctrl, body.fullmode .vbar,
+body.fullmode .topbar, body.fullmode .prac {
+  max-width:100%;
+}
+body.fullmode .afrm {
+  border-radius:8px;
+}
+
+/* Scroll hint */
+.shint { font-size:11px; color:var(--txt2); text-align:center; margin-top:4px; opacity:.55; display:none; }
+@media(max-width:620px){ .shint{display:block;} }
+
+/* Keyboard legend */
+.kbd { font-size:10px; color:var(--gold3); text-align:center; margin-top:5px; letter-spacing:.07em; }
+@media(max-width:640px){ .kbd{display:none;} }
+
+/* Footer */
+.ftr { margin-top:12px; text-align:center; font-size:clamp(.48rem,1.5vw,.62rem);
+       color:var(--txt2); letter-spacing:.1em; opacity:.45; padding:0 8px;
+       animation:fd .5s .5s ease both; }
+
+/* Toast */
+.toast {
+  position:fixed; bottom:18px; left:50%;
+  -webkit-transform:translateX(-50%) translateY(80px); transform:translateX(-50%) translateY(80px);
+  background:rgba(10,6,2,.96); border:1.5px solid var(--border);
+  border-radius:8px; padding:9px 18px; color:var(--gold1);
+  font-size:13px; font-weight:700; letter-spacing:.07em;
+  box-shadow:0 6px 26px rgba(0,0,0,.7);
+  -webkit-transition:-webkit-transform .26s ease; transition:transform .26s ease;
+  z-index:9999; pointer-events:none; max-width:92vw; text-align:center;
+}
+.toast.show { -webkit-transform:translateX(-50%) translateY(0); transform:translateX(-50%) translateY(0); }
+
+/* ════════════════════════════════════════════════════════
+   RESPONSIVE breakpoints — identical to before
+   ════════════════════════════════════════════════════════ */
+</style>
+</head>
+<body>
+
+<!-- ═══════════════ ZEN MODE OVERLAY ═══════════════ -->
+<div class="zen-overlay" id="zenOverlay">
+  <button class="zen-exit" onclick="exitZen()">&#10005; Exit Zen</button>
+  <div class="zen-vdisp" id="zenVdisp">0</div>
+  <div class="zen-asc" id="zenAsc">
+    <div class="afrm" id="zenAfrm">
+      <div class="co co-tl"></div><div class="co co-tr"></div>
+      <div class="co co-bl"></div><div class="co co-br"></div>
+      <div class="chdr" id="zenChdr"></div>
+      <div class="rstrip" id="zenRstrip"></div>
+    </div>
+  </div>
+  <div class="zen-bar">
+    <button class="btn btog" onclick="toggleZenVis()">&#128065; <span id="zenVisLbl">Hide</span></button>
+    <button class="btn brst" onclick="resetAll()">&#8635; Reset</button>
+    <input type="text" id="zenNin" class="cinp" placeholder="Set number" inputmode="decimal"
+           style="width:130px;" onkeydown="if(event.key==='Enter')setNum()">
+    <button class="btn bset" onclick="setNum()">&#9654; Set</button>
+  </div>
+</div>
+
+<!-- ═══════════════ TOP BAR ═══════════════ -->
+<div class="topbar">
+  <div class="topbtns" style="flex-shrink:0;">
+    <button class="icon-btn" id="btnFull"  onclick="toggleFull()"  title="Full Width Mode">&#9712;</button>
+    <button class="icon-btn" id="btnZen"   onclick="enterZen()"    title="Zen Mode (Fullscreen)">&#127758;</button>
+    <button class="icon-btn" id="btnSet"   onclick="toggleSettings()" title="Themes &amp; Fonts">&#9881;</button>
+  </div>
+
+  <div class="hdr">
+    <div class="inst-name" id="instName">&#x2B21; PSAVI ABACUS TOOL v10.0 &#x2B21;</div>
+    <div class="inst-sub">&#128222; +91-8125095061 &nbsp;&middot;&nbsp; 13-Rod Professional Abacus</div>
+  </div>
+
+  <div class="topbtns" style="flex-shrink:0;">
+    <button class="btn btog" id="bVis" onclick="toggleVis()" style="min-height:40px;padding:7px 12px;font-size:12px;">&#128065; Hide</button>
+    <button class="btn brst" onclick="resetAll()" style="min-height:40px;padding:7px 12px;font-size:12px;">&#8635; Reset</button>
+  </div>
+</div>
+
+<!-- ═══════════════ SETTINGS DRAWER ═══════════════ -->
+<div class="settings-drawer" id="settingsDrawer">
+
+  <!-- THEME GROUP — dropdown -->
+  <div class="sgroup">
+    <div class="sgroup-title">&#127912; Colour Theme</div>
+    <select class="theme-select" id="themeSelect" onchange="setTheme(this.value)">
+      <option value="psavb"    selected>&#x1F535; PS AVB Blue &mdash; Navy, orange &amp; blue beads</option>
+      <option value="classic"          >&#x1F333; Classic Wood &mdash; Dark wood, red &amp; blue beads</option>
+      <option value="bamboo"           >&#x1F38B; Bamboo Green &mdash; Nature green, amber beads</option>
+      <option value="midnight"         >&#x1F319; Midnight Blue &mdash; Deep navy, pink &amp; blue beads</option>
+      <option value="sakura"           >&#x1F338; Sakura Pink &mdash; Rose frame, purple beads</option>
+      <option value="ivory"            >&#x2600;&#xFE0F;  Ivory Light &mdash; Cream, for bright rooms</option>
+    </select>
+    <!-- Live colour preview strip -->
+    <div class="theme-preview" id="themePreview">
+      <div class="tp-dot" id="tp1"></div>
+      <div class="tp-dot" id="tp2"></div>
+      <div class="tp-dot" id="tp3"></div>
+      <span class="tp-label" id="tpLabel">Classic Wood</span>
+    </div>
+  </div>
+
+  <!-- UNIT MODE GROUP -->
+  <div class="sgroup" style="min-width:220px;">
+    <div class="sgroup-title">&#9881; Abacus Unit Mode</div>
+    <select class="theme-select" id="unitModeSelect" onchange="setUnitMode(this.value)">
+      <option value="decimal"    selected>&#128290; Decimal (Standard) &mdash; 6 decimals</option>
+      <option value="integer"           >&#127963; Integer (Classical) &mdash; up to 1 Trillion</option>
+      <option value="currency"          >&#128176; Currency (&#8377;/$) &mdash; 2 decimal places</option>
+      <option value="scientific"        >&#128300; Scientific Notation &mdash; powers of 10</option>
+      <option value="time"              >&#9200; Time (HH:MM:SS)</option>
+      <option value="fraction"          >&#189; Fractions (halves/quarters/eighths)</option>
+    </select>
+    <div style="font-size:11px;color:#a08040;margin-top:2px;padding:5px 8px;background:#0f0a04;border-radius:5px;border:1px solid #5a3810;" id="unitModeDesc">Units at centre rod &mdash; supports up to 6 decimal places</div>
+  </div>
+
+  <!-- FONT GROUP -->
+  <div class="sgroup">
+    <div class="sgroup-title">&#128441; Font Style</div>
+    <div class="font-btns">
+      <button class="font-btn sel" data-f="japanese"    onclick="setFont('japanese')">和 Japanese</button>
+      <button class="font-btn"     data-f="classical"   onclick="setFont('classical')">Classical</button>
+      <button class="font-btn"     data-f="digital"     onclick="setFont('digital')">DIGITAL</button>
+      <button class="font-btn"     data-f="handwritten" onclick="setFont('handwritten')">Handwritten</button>
+      <button class="font-btn"     data-f="modern"      onclick="setFont('modern')">Modern</button>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════════ VALUE BAR ═══════════════ -->
+<div class="vbar">
+  <span class="vlbl">VALUE</span>
+  <div id="vdisp">0</div>
+</div>
+
+<!-- ═══════════════ ABACUS ═══════════════ -->
+<div class="asc" id="asc">
+  <div class="afrm" id="afrm">
+    <div class="co co-tl"></div><div class="co co-tr"></div>
+    <div class="co co-bl"></div><div class="co co-br"></div>
+    <div class="chdr" id="chdr"></div>
+    <div class="rstrip" id="rstrip"></div>
+  </div>
+</div>
+<div class="shint">&#8592; Scroll sideways if needed &#8594; &nbsp;|&nbsp; &#9679; White dot = UNITS (centre rod)</div>
+
+<!-- ═══════════════ CONTROLS ═══════════════ -->
+<div class="ctrl">
+  <div class="crow">
+    <span class="clbl">SET NUMBER</span>
+    <input type="text" id="nIn" class="cinp" placeholder="e.g. 1234 or 3.14" inputmode="decimal"
+           onkeydown="if(event.key==='Enter')setNum()">
+    <button class="btn bset" onclick="setNum()">&#9654; SET</button>
+  </div>
+  <div class="sep"></div>
+  <div class="crow">
+    <button class="btn bprac" id="bPrac" onclick="togglePrac()">&#127919; Practice</button>
+  </div>
+</div>
+
+<!-- ═══════════════ PRACTICE PANEL ═══════════════ -->
+<div class="prac" id="pPanel">
+  <div class="ptitle">&#127891; PSAVI Practice Mode</div>
+  <div class="drow">
+    <span class="dlbl">DIFFICULTY</span>
+    <select class="dsel" id="dSel" onchange="newQ()">
+      <option value="easy">Easy (2-digit)</option>
+      <option value="med" selected>Medium (3-digit)</option>
+      <option value="hard">Hard (4-5 digit)</option>
+    </select>
+  </div>
+  <div class="qbox">
+    <div class="qtxt" id="qTxt">Loading...</div>
+    <div class="qhint">Solve on the abacus, then type your answer below</div>
+  </div>
+  <div class="prow">
+    <input type="number" id="pAns" class="pinp" placeholder="Answer" inputmode="numeric"
+           onkeydown="if(event.key==='Enter')checkAns()">
+    <button class="btn bchk" onclick="checkAns()">&#10003; CHECK</button>
+    <button class="btn bnxt" onclick="newQ()">&#8594; NEXT</button>
+    <div class="badge" id="badge"></div>
+  </div>
+  <div class="scr">Score: <span id="sV">0</span> / <span id="tV">0</span></div>
+</div>
+
+<div class="kbd">Keys: R=Reset &nbsp;|&nbsp; V=Hide/Show value &nbsp;|&nbsp; P=Practice &nbsp;|&nbsp; Z=Zen &nbsp;|&nbsp; F=Full &nbsp;|&nbsp; S=Settings &nbsp;|&nbsp; Esc=Exit Zen</div>
+
+<footer class="ftr">
+  PSAVI ABACUS TOOL v10.0 &middot; +91-8125095061 &middot; Works offline &middot; iPad &middot; iPhone &middot; Android &middot; Desktop
+</footer>
+<div class="toast" id="toast"></div>
+
+<script>
+'use strict';
+/* ═══════════════════════════════════════════════
+   CONSTANTS
+   ═══════════════════════════════════════════════ */
+var RODS  = 13;
+/* ═══════════════════════════════════════════════
+   UNIT MODES — define all column label sets and value formatting
+   unitsRod: which rod index is the "1s" position
+   dotAfter:  insert decimal point after this rod index (-1 = none)
+   ═══════════════════════════════════════════════ */
+var UNIT_MODES = {
+  decimal: {
+    name:'Decimal (Standard)', emoji:'🔢',
+    desc:'Units at centre rod — supports up to 6 decimal places',
+    short:['1M','100K','10K','1K','100','10','1','0.1','0.01','0.001','0.0001','0.00001','0.000001'],
+    full: ['1 Million','100 Thousand','10 Thousand','1 Thousand','Hundreds','Tens','UNITS','Tenths','Hundredths','Thousandths','Ten-Thousandths','Hundred-Thousandths','Millionths'],
+    unitsRod:6, dotAfter:6
+  },
+  integer: {
+    name:'Integer (Classical)', emoji:'🏛️',
+    desc:'All 13 rods represent whole-number places up to 1 Trillion',
+    short:['1T','100B','10B','1B','100M','10M','1M','100K','10K','1K','100','10','1'],
+    full: ['1 Trillion','100 Billion','10 Billion','1 Billion','100 Million','10 Million','1 Million','100 Thousand','10 Thousand','1 Thousand','Hundreds','Tens','Units'],
+    unitsRod:12, dotAfter:-1
+  },
+  currency: {
+    name:'Currency (₹ / $)', emoji:'💰',
+    desc:'11 integer places + 2 decimal (paise/cents)',
+    short:['100B','10B','1B','100M','10M','1M','100K','10K','1K','100','1','.10','.01'],
+    full: ['100 Billion','10 Billion','1 Billion','100 Million','10 Million','1 Million','100 Thousand','10 Thousand','1 Thousand','Hundreds','Rupees/Dollars','10 Paise/Cents','1 Paise/Cent'],
+    unitsRod:10, dotAfter:10
+  },
+  scientific: {
+    name:'Scientific Notation', emoji:'🔬',
+    desc:'Powers of 10 — units at rod 9, 4 decimal places',
+    short:['10⁸','10⁷','10⁶','10⁵','10⁴','10³','10²','10¹','1','0.1','0.01','0.001','0.0001'],
+    full: ['Hundred Million','Ten Million','One Million','Hundred Thousand','Ten Thousand','Thousands','Hundreds','Tens','Units (1)','Tenths','Hundredths','Thousandths','Ten-Thousandths'],
+    unitsRod:8, dotAfter:8
+  },
+  time: {
+    name:'Time (HH:MM:SS)', emoji:'⏱️',
+    desc:'Rods 7-12 show Hours:Minutes:Seconds (rods 0-6 unused)',
+    short:['—','—','—','—','—','—','—','H','H','M','M','S','S'],
+    full: ['Unused','Unused','Unused','Unused','Unused','Unused','Unused','Hours (10s)','Hours (1s)','Minutes (10s)','Minutes (1s)','Seconds (10s)','Seconds (1s)'],
+    unitsRod:12, dotAfter:-1
+  },
+  fraction: {
+    name:'Fractions (½ ¼ ⅛)', emoji:'½',
+    desc:'Rods 0-6 = whole number, rods 7-12 = halves/quarters/eighths',
+    short:['1M','100K','10K','1K','100','10','1','½','¼','⅛','¹⁄₁₆','¹⁄₃₂','¹⁄₆₄'],
+    full: ['1 Million','100 Thousand','10 Thousand','1 Thousand','Hundreds','Tens','Ones','Halves','Quarters','Eighths','Sixteenths','Thirty-Seconds','Sixty-Fourths'],
+    unitsRod:6, dotAfter:-1
+  }
+};
+var curUnitMode = 'decimal';
+/* Dynamic column arrays — updated by setUnitMode() */
+var COL_S = UNIT_MODES.decimal.short.slice();
+var COL_F = UNIT_MODES.decimal.full.slice();
+
+/* ═══════════════════════════════════════════════
+   STATE
+   ═══════════════════════════════════════════════ */
+var ST   = [];
+var visOn  = true;
+var zenVis = true;
+var pracOn = false;
+var zenOn  = false;
+var fullOn = false;
+var curAns = 0;
+var score  = 0, tot = 0;
+var builtLayout = null;
+var zenBuilt    = null;
+
+/* ═══════════════════════════════════════════════
+   AUDIO
+   ═══════════════════════════════════════════════ */
+var AC = null;
+function initAC(){if(!AC)try{AC=new(window.AudioContext||window.webkitAudioContext)();}catch(e){}}
+function beep(){
+  if(!AC)return;
+  try{
+    var len=Math.floor(AC.sampleRate*.05),buf=AC.createBuffer(1,len,AC.sampleRate),d=buf.getChannelData(0);
+    for(var i=0;i<len;i++)d[i]=(Math.random()*2-1)*Math.pow(1-i/len,3);
+    var s=AC.createBufferSource();s.buffer=buf;
+    var f=AC.createBiquadFilter();f.type='bandpass';f.frequency.value=860;f.Q.value=1.4;
+    var g=AC.createGain();g.gain.setValueAtTime(.44,AC.currentTime);g.gain.exponentialRampToValueAtTime(.001,AC.currentTime+.08);
+    s.connect(f);f.connect(g);g.connect(AC.destination);s.start();
+  }catch(e){}
+}
+function beepOk(){
+  if(!AC)return;
+  try{
+    [523,659,784].forEach(function(fr,i){
+      var o=AC.createOscillator(),g=AC.createGain();o.type='sine';o.frequency.value=fr;
+      var t=AC.currentTime+i*.13;
+      g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.15,t+.02);g.gain.exponentialRampToValueAtTime(.001,t+.28);
+      o.connect(g);g.connect(AC.destination);o.start(t);o.stop(t+.32);
+    });
+  }catch(e){}
+}
+function beepErr(){
+  if(!AC)return;
+  try{
+    var o=AC.createOscillator(),g=AC.createGain();o.type='sawtooth';
+    o.frequency.setValueAtTime(200,AC.currentTime);o.frequency.linearRampToValueAtTime(100,AC.currentTime+.32);
+    g.gain.setValueAtTime(.13,AC.currentTime);g.gain.exponentialRampToValueAtTime(.001,AC.currentTime+.38);
+    o.connect(g);g.connect(AC.destination);o.start();o.stop(AC.currentTime+.42);
+  }catch(e){}
+}
+
+/* ═══════════════════════════════════════════════
+   LAYOUT — pure JS, no CSS var reading
+   ═══════════════════════════════════════════════ */
+function getLayout(containerW){
+  var w = containerW || window.innerWidth || 320;
+  if(w>=721) return{rodW:42,rodGap:5,beadW:36,beadH:22,beadGap:4,upperH:80,lowerH:200,beamH:12,pad:5,shaftW:5};
+  if(w>=521) return{rodW:34,rodGap:3,beadW:28,beadH:18,beadGap:3,upperH:65,lowerH:162,beamH:10,pad:4,shaftW:4};
+  if(w>=391) return{rodW:28,rodGap:2,beadW:24,beadH:15,beadGap:3,upperH:54,lowerH:135,beamH:9, pad:3,shaftW:3};
+  return       {rodW:24,rodGap:2,beadW:20,beadH:13,beadGap:2,upperH:46,lowerH:114,beamH:8, pad:2,shaftW:3};
+}
+
+/* ═══════════════════════════════════════════════
+   BUILD DOM  (normal + zen — same logic, different targets)
+   ═══════════════════════════════════════════════ */
+function buildBoard(stripId, hdrId, L){
+  var strip=document.getElementById(stripId);
+  var hdrs =document.getElementById(hdrId);
+  if(!strip||!hdrs)return;
+  strip.innerHTML=''; hdrs.innerHTML='';
+  strip.style.gap=L.rodGap+'px'; hdrs.style.gap=L.rodGap+'px';
+
+  for(var r=0;r<RODS;r++){
+    var hdr=document.createElement('div');
+    var mode=UNIT_MODES[curUnitMode]||UNIT_MODES.decimal;
+    var uRod=mode.unitsRod;
+    var hdrCls='ch';
+    if(r===uRod) hdrCls='ch units-rod';
+    else if(r<uRod) hdrCls='ch int-rod';
+    else hdrCls='ch dec-rod';
+    hdr.className=hdrCls; hdr.title=COL_F[r]; hdr.textContent=COL_S[r];
+    hdr.style.width=L.rodW+'px'; hdrs.appendChild(hdr);
+
+    var rod=document.createElement('div');
+    rod.className='rod'; rod.style.width=L.rodW+'px';
+
+    // Upper
+    var us=document.createElement('div'); us.className='usec'; us.id=stripId+'_us'+r; us.style.height=L.upperH+'px';
+    var shu=document.createElement('div'); shu.className='shaft'; shu.style.width=L.shaftW+'px'; us.appendChild(shu);
+    var ub=document.createElement('div'); ub.className='bead bu'; ub.id=stripId+'_u'+r;
+    ub.style.width=L.beadW+'px'; ub.style.height=L.beadH+'px';
+    ub.setAttribute('role','button'); ub.setAttribute('aria-label','Upper bead rod '+(r+1));
+    addEv(ub,(function(ri){return function(){tapU(ri);};})(r));
+    us.appendChild(ub); rod.appendChild(us);
+
+    // Beam
+    var bm=document.createElement('div'); bm.className='beam'; bm.style.height=L.beamH+'px';
+    if(r===6) bm.classList.add('mk','mk-units');
+    else if(r<6&&(6-r)%3===0) bm.classList.add('mk');
+    rod.appendChild(bm);
+
+    // Lower
+    var ls=document.createElement('div'); ls.className='lsec'; ls.id=stripId+'_ls'+r; ls.style.height=L.lowerH+'px';
+    var shl=document.createElement('div'); shl.className='shaft'; shl.style.width=L.shaftW+'px'; ls.appendChild(shl);
+    for(var b=0;b<4;b++){
+      var lb=document.createElement('div'); lb.className='bead bl'; lb.id=stripId+'_l'+r+'_'+b;
+      lb.style.width=L.beadW+'px'; lb.style.height=L.beadH+'px';
+      lb.setAttribute('role','button');
+      addEv(lb,(function(ri,bi){return function(){tapL(ri,bi);};})(r,b));
+      ls.appendChild(lb);
+    }
+    rod.appendChild(ls); strip.appendChild(rod);
+  }
+}
+
+function addEv(el,handler){
+  var fired=false,reset=function(){fired=false;};
+  el.addEventListener('touchstart',function(e){e.preventDefault();if(fired)return;fired=true;initAC();handler();setTimeout(reset,400);},{passive:false});
+  el.addEventListener('pointerdown',function(e){e.preventDefault();if(fired)return;fired=true;initAC();handler();setTimeout(reset,400);},{passive:false});
+  el.addEventListener('mousedown',function(e){e.preventDefault();if(fired)return;fired=true;initAC();handler();setTimeout(reset,400);});
+}
+
+/* ═══════════════════════════════════════════════
+   BUILD MAIN + ZEN BOARDS
+   ═══════════════════════════════════════════════ */
+function build(){
+  var L=getLayout(); builtLayout=JSON.stringify(L);
+  buildBoard('rstrip','chdr',L);
+}
+function buildZen(){
+  // Zen uses screen width since it's fullscreen
+  var L=getLayout(window.innerWidth); zenBuilt=JSON.stringify(L);
+  buildBoard('zenRstrip','zenChdr',L);
+}
+
+/* ═══════════════════════════════════════════════
+   RENDER — positions beads in BOTH boards
+   ═══════════════════════════════════════════════ */
+function renderAll(){
+  var L=getLayout();
+  if(JSON.stringify(L)!==builtLayout){build();}
+  for(var r=0;r<RODS;r++) renderRod('rstrip',r,L);
+
+  if(zenOn){
+    var Lz=getLayout(window.innerWidth);
+    if(JSON.stringify(Lz)!==zenBuilt){buildZen();}
+    for(var r2=0;r2<RODS;r2++) renderRod('zenRstrip',r2,Lz);
+  }
+  updDisp();
+}
+
+function renderRod(prefix,r,L){
+  if(!L) L=getLayout();
+  var st=ST[r]; if(!st)return;
+  var ub=document.getElementById(prefix+'_u'+r);
+  if(ub){
+    ub.style.top=(st.upper?L.upperH-L.beadH-L.pad:L.pad)+'px';
+    ub.className='bead bu'+(st.upper?' on':'');
+  }
+  for(var b=0;b<4;b++){
+    var lb=document.getElementById(prefix+'_l'+r+'_'+b); if(!lb)continue;
+    var act=b<st.lower, top;
+    if(act){ top=L.pad+b*(L.beadH+L.beadGap); }
+    else { var rank=b-st.lower,total=4-st.lower; top=L.lowerH-L.pad-(total-rank)*(L.beadH+L.beadGap)+L.beadGap; }
+    lb.style.top=top+'px';
+    lb.className='bead bl'+(act?' on':'');
+  }
+}
+
+/* ═══════════════════════════════════════════════
+   TAP HANDLERS
+   ═══════════════════════════════════════════════ */
+function tapU(r){ST[r].upper=ST[r].upper?0:1;renderAll();beep();}
+function tapL(r,b){ST[r].lower=(b<ST[r].lower)?b:b+1;renderAll();beep();}
+
+/* ═══════════════════════════════════════════════
+   VALUE
+   ═══════════════════════════════════════════════ */
+function calcVal(){
+  var digits='';
+  for(var r=0;r<RODS;r++) digits+=String(ST[r].upper*5+ST[r].lower);
+  return digits; // raw 13-char digit string
+}
+function fmtVal(){
+  var digits=calcVal();
+  var mode=UNIT_MODES[curUnitMode]||UNIT_MODES.decimal;
+  var dot=mode.dotAfter;
+
+  /* ── Time mode: show HH:MM:SS ── */
+  if(curUnitMode==='time'){
+    var hh=digits.slice(7,9), mm=digits.slice(9,11), ss=digits.slice(11,13);
+    hh=hh.replace(/^0/,'') || '0';
+    return hh+':'+mm+':'+ss;
+  }
+
+  /* ── Fraction mode: whole + fraction label ── */
+  if(curUnitMode==='fraction'){
+    var whole=digits.slice(0,7).replace(/^0+/,'')||'0';
+    whole=whole.replace(/\B(?=(\d{3})+(?!\d))/g,',');
+    var fracDigits=digits.slice(7); // 6 rods → denominator is 64
+    // Convert fraction rods to a value /64
+    var fracVal=0;
+    var denoms=[2,4,8,16,32,64];
+    for(var fi=0;fi<6;fi++) fracVal+=parseInt(fracDigits[fi],10)*(64/denoms[fi]);
+    // Simplify: fracVal/64
+    function gcd(a,b){return b?gcd(b,a%b):a;}
+    if(fracVal===0) return whole;
+    var num=fracVal, den=64, g=gcd(num,den); num/=g; den/=g;
+    return whole+' '+num+'/'+den;
+  }
+
+  /* ── Standard: insert decimal point at dotAfter ── */
+  if(dot>=0 && dot<RODS-1){
+    var ipPart=digits.slice(0, dot+1);
+    var dpPart=digits.slice(dot+1);
+    var iFormatted=ipPart.replace(/^0+/,'')||'0';
+    iFormatted=iFormatted.replace(/\B(?=(\d{3})+(?!\d))/g,',');
+    var dTrimmed=dpPart.replace(/0+$/,'');
+    return dTrimmed ? iFormatted+'.'+dTrimmed : iFormatted;
+  }
+
+  /* ── Integer / no decimal ── */
+  var all=digits.replace(/^0+/,'')||'0';
+  return all.replace(/\B(?=(\d{3})+(?!\d))/g,',');
+}
+function updDisp(){
+  var s=fmtVal();
+  document.getElementById('vdisp').textContent=s;
+  if(zenOn){
+    var zv=document.getElementById('zenVdisp');
+    if(zv) zv.textContent=s;
+  }
+}
+
+/* ═══════════════════════════════════════════════
+   VISIBILITY
+   ═══════════════════════════════════════════════ */
+function toggleVis(){
+  visOn=!visOn;
+  document.getElementById('vdisp').className=visOn?'':'blr';
+  document.getElementById('bVis').innerHTML=visOn?'&#128065; Hide':'&#128065; Show';
+}
+function toggleZenVis(){
+  zenVis=!zenVis;
+  var zv=document.getElementById('zenVdisp');
+  if(zv) zv.className=zenVis?'zen-vdisp':'zen-vdisp blr';
+  document.getElementById('zenVisLbl').textContent=zenVis?'Hide':'Show';
+}
+
+/* ═══════════════════════════════════════════════
+   SET NUMBER
+   ═══════════════════════════════════════════════ */
+function setNum(){
+  var raw=(document.getElementById(zenOn?'zenNin':'nIn').value||'').trim();
+  if(!raw){ toast('Enter a number first'); return; }
+  var mode=UNIT_MODES[curUnitMode]||UNIT_MODES.decimal;
+  var dot=mode.dotAfter;
+  var full='0000000000000'; // 13 zeros default
+
+  /* ── Time: parse HH:MM:SS or HHMMSS ── */
+  if(curUnitMode==='time'){
+    raw=raw.replace(/[^0-9:]/g,'');
+    var parts=raw.split(':');
+    var hh='00',mm='00',ss='00';
+    if(parts.length===3){ hh=('0'+parts[0]).slice(-2); mm=('0'+parts[1]).slice(-2); ss=('0'+parts[2]).slice(-2); }
+    else { var digits=raw.replace(/:/g,''); hh=digits.slice(0,2)||'00'; mm=digits.slice(2,4)||'00'; ss=digits.slice(4,6)||'00'; }
+    full='0000000'+hh+mm+ss;
+    toast('Set to '+hh+':'+mm+':'+ss);
+  }
+  /* ── Standard decimal/integer/currency/scientific ── */
+  else {
+    raw=raw.replace(/[^0-9.]/g,'');
+    if(!raw||raw==='.'){ toast('Enter a number'); return; }
+    if(dot>=0){
+      var parts2=raw.split('.');
+      var ip=parts2[0]||'0', dp=parts2[1]||'';
+      var intLen=dot+1; // rods 0..dot
+      var decLen=RODS-intLen;
+      if(ip.length>intLen) ip=ip.slice(-intLen);
+      while(ip.length<intLen) ip='0'+ip;
+      if(dp.length>decLen) dp=dp.slice(0,decLen);
+      while(dp.length<decLen) dp=dp+'0';
+      full=ip+dp;
+      var dpTrimmed=dp.replace(/0+$/,'');
+      var ipDisplay=ip.replace(/^0+/,'')||'0'; ipDisplay=ipDisplay.replace(/\B(?=(\d{3})+(?!\d))/g,',');
+      toast('Set to '+(dpTrimmed ? ipDisplay+'.'+dpTrimmed : ipDisplay));
+    } else {
+      raw=raw.replace(/\./g,'');
+      if(raw.length>RODS) raw=raw.slice(-RODS);
+      while(raw.length<RODS) raw='0'+raw;
+      full=raw;
+      toast('Set to '+parseInt(raw,10).toLocaleString());
+    }
+  }
+
+  /* Map 13-char string to rods */
+  for(var r=0;r<RODS;r++){
+    var digit=parseInt(full[r],10)||0;
+    ST[r].upper=digit>=5?1:0;
+    ST[r].lower=digit>=5?digit-5:digit;
+  }
+  renderAll();
+}
+
+/* ═══════════════════════════════════════════════
+   RESET
+   ═══════════════════════════════════════════════ */
+function resetAll(){
+  ST=[];
+  for(var r=0;r<RODS;r++) ST.push({upper:0,lower:0});
+  // Clear the Set Number input boxes on reset
+  var ni=document.getElementById('nIn'); if(ni) ni.value='';
+  var zi=document.getElementById('zenNin'); if(zi) zi.value='';
+  renderAll(); beep(); toast('Abacus reset');
+}
+
+/* ═══════════════════════════════════════════════
+   FULL WIDTH MODE
+   ═══════════════════════════════════════════════ */
+function toggleFull(){
+  fullOn=!fullOn;
+  document.body.classList.toggle('fullmode',fullOn);
+  document.getElementById('btnFull').classList.toggle('active',fullOn);
+  // Rebuild to fill available width
+  builtLayout=null; build(); renderAll();
+  toast(fullOn?'Full width mode ON':'Full width mode OFF');
+}
+
+/* ═══════════════════════════════════════════════
+   ZEN MODE
+   ═══════════════════════════════════════════════ */
+function enterZen(){
+  zenOn=true;
+  document.getElementById('zenOverlay').classList.add('on');
+  document.getElementById('btnZen').classList.add('active');
+  // Build zen board fresh
+  buildZen();
+  // Render state into zen board
+  var Lz=getLayout(window.innerWidth);
+  for(var r=0;r<RODS;r++) renderRod('zenRstrip',r,Lz);
+  updDisp();
+  // Try fullscreen API
+  try{
+    var el=document.getElementById('zenOverlay');
+    if(el.requestFullscreen) el.requestFullscreen();
+    else if(el.webkitRequestFullscreen) el.webkitRequestFullscreen();
+  }catch(e){}
+  toast('Zen Mode — tap beads to practise');
+}
+function exitZen(){
+  zenOn=false;
+  document.getElementById('zenOverlay').classList.remove('on');
+  document.getElementById('btnZen').classList.remove('active');
+  try{
+    if(document.exitFullscreen) document.exitFullscreen();
+    else if(document.webkitExitFullscreen) document.webkitExitFullscreen();
+  }catch(e){}
+}
+
+/* ═══════════════════════════════════════════════
+   SETTINGS DRAWER
+   ═══════════════════════════════════════════════ */
+function toggleSettings(){
+  var d=document.getElementById('settingsDrawer');
+  var open=d.classList.toggle('open');
+  document.getElementById('btnSet').classList.toggle('active',open);
+}
+
+/* ═══════════════════════════════════════════════
+   THEME
+   ═══════════════════════════════════════════════ */
+/* Theme preview colours — hardcoded so always visible regardless of active theme */
+var THEME_INFO = {
+  psavb:    { label:'PS AVB Blue',   c1:'#ea580c', c2:'#1e40af', c3:'#3b82f6' },
+  classic:  { label:'Classic Wood',  c1:'#c82020', c2:'#7a4820', c3:'#1a2e5a' },
+  bamboo:   { label:'Bamboo Green',  c1:'#70b840', c2:'#3a6020', c3:'#b07818' },
+  midnight: { label:'Midnight Blue', c1:'#4080e0', c2:'#101840', c3:'#e04080' },
+  sakura:   { label:'Sakura Pink',   c1:'#e080a0', c2:'#601840', c3:'#c060a0' },
+  ivory:    { label:'Ivory Light',   c1:'#c03020', c2:'#a07040', c3:'#2050a0' }
+};
+function setTheme(t){
+  document.documentElement.setAttribute('data-theme',t);
+  /* Sync dropdown */
+  var sel=document.getElementById('themeSelect'); if(sel) sel.value=t;
+  /* Update preview strip */
+  var info=THEME_INFO[t]||THEME_INFO.classic;
+  var tp1=document.getElementById('tp1'); if(tp1) tp1.style.background=info.c1;
+  var tp2=document.getElementById('tp2'); if(tp2) tp2.style.background=info.c2;
+  var tp3=document.getElementById('tp3'); if(tp3) tp3.style.background=info.c3;
+  var tpl=document.getElementById('tpLabel'); if(tpl) tpl.textContent=info.label;
+  toast('Theme: '+info.label);
+}
+
+/* ═══════════════════════════════════════════════
+   FONT
+   ═══════════════════════════════════════════════ */
+function setFont(f){
+  document.documentElement.setAttribute('data-font',f);
+  document.querySelectorAll('.font-btn').forEach(function(b){ b.classList.toggle('sel',b.getAttribute('data-f')===f); });
+  toast('Font: '+f.charAt(0).toUpperCase()+f.slice(1));
+}
+
+/* ═══════════════════════════════════════════════
+   UNIT MODE
+   ═══════════════════════════════════════════════ */
+function setUnitMode(m){
+  if(!UNIT_MODES[m]) return;
+  curUnitMode=m;
+  var mode=UNIT_MODES[m];
+  COL_S=mode.short.slice();
+  COL_F=mode.full.slice();
+  /* Sync dropdown */
+  var sel=document.getElementById('unitModeSelect'); if(sel) sel.value=m;
+  /* Update description */
+  var desc=document.getElementById('unitModeDesc'); if(desc) desc.textContent=mode.desc;
+  /* Update beam markers to reflect new unitsRod */
+  updateBeamMarkers(mode.unitsRod);
+  /* Rebuild column headers */
+  refreshHeaders('chdr'); refreshHeaders('zenChdr');
+  /* Reset abacus on mode switch */
+  for(var r=0;r<RODS;r++) ST[r]={upper:0,lower:0};
+  renderAll();
+  toast('Mode: '+mode.name);
+}
+
+function updateBeamMarkers(unitsRod){
+  /* Re-apply mk / mk-units classes to all beams in both boards */
+  ['rstrip','zenRstrip'].forEach(function(sid){
+    var strip=document.getElementById(sid); if(!strip)return;
+    var beams=strip.querySelectorAll('.beam');
+    beams.forEach(function(bm,r){
+      bm.classList.remove('mk','mk-units');
+      if(r===unitsRod){ bm.classList.add('mk','mk-units'); }
+      else if(r<unitsRod && (unitsRod-r)%3===0){ bm.classList.add('mk'); }
+    });
+  });
+}
+
+function refreshHeaders(hdrId){
+  var hdrs=document.getElementById(hdrId); if(!hdrs)return;
+  var chs=hdrs.querySelectorAll('.ch');
+  var uRod=(UNIT_MODES[curUnitMode]||UNIT_MODES.decimal).unitsRod;
+  chs.forEach(function(ch,r){
+    ch.textContent=COL_S[r]||''; ch.title=COL_F[r]||'';
+    if(r===uRod) ch.className='ch units-rod';
+    else if(r<uRod) ch.className='ch int-rod';
+    else ch.className='ch dec-rod';
+  });
+}
+
+/* ═══════════════════════════════════════════════
+   PRACTICE MODE
+   ═══════════════════════════════════════════════ */
+function togglePrac(){
+  pracOn=!pracOn;
+  var p=document.getElementById('pPanel'),btn=document.getElementById('bPrac');
+  if(pracOn){
+    p.classList.add('on');
+    btn.textContent='\u2715 Exit Practice';
+    btn.style.cssText='background:linear-gradient(135deg,#3a0010,#600030);color:#ffb0c0;border-color:#900040;';
+    score=0;tot=0;updScore();newQ();
+  }else{
+    p.classList.remove('on'); btn.textContent='\uD83C\uDFAF Practice'; btn.style.cssText='';
+  }
+}
+function newQ(){
+  document.getElementById('badge').className='badge'; document.getElementById('pAns').value='';
+  var d=document.getElementById('dSel').value;
+  var R={easy:[10,99],med:[100,999],hard:[1000,49999]};
+  var lo=R[d][0],hi=R[d][1],rnd=function(a,b){return Math.floor(Math.random()*(b-a+1))+a;};
+  var op=Math.random()<.5?'+':'-'; var a=rnd(lo,hi),b=rnd(lo,hi);
+  if(op==='-'){if(b>a){var tmp=a;a=b;b=tmp;} curAns=a-b;} else curAns=a+b;
+  document.getElementById('qTxt').textContent=a.toLocaleString()+' '+op+' '+b.toLocaleString()+' = ?';
+  resetAll();
+}
+function checkAns(){
+  var raw=document.getElementById('pAns').value.trim();
+  if(!raw){toast('Type your answer');return;}
+  var ans=parseFloat(raw),badge=document.getElementById('badge'); tot++;
+  if(ans===curAns){
+    score++; badge.textContent='\u2713 CORRECT!'; badge.className='badge show ok';
+    document.getElementById('nIn').value=curAns; setNum(); beepOk();
+  }else{
+    badge.textContent='\u2717 Wrong ('+curAns.toLocaleString()+')'; badge.className='badge show err'; beepErr();
+  }
+  updScore();
+}
+function updScore(){document.getElementById('sV').textContent=score;document.getElementById('tV').textContent=tot;}
+
+/* ═══════════════════════════════════════════════
+   TOAST
+   ═══════════════════════════════════════════════ */
+var _tt=null;
+function toast(m){
+  var e=document.getElementById('toast'); e.textContent=m; e.classList.add('show');
+  clearTimeout(_tt); _tt=setTimeout(function(){e.classList.remove('show');},2400);
+}
+
+/* ═══════════════════════════════════════════════
+   KEYBOARD SHORTCUTS
+   ═══════════════════════════════════════════════ */
+document.addEventListener('keydown',function(e){
+  if(e.target.tagName==='INPUT'||e.target.tagName==='SELECT') return;
+  if(e.key==='r'||e.key==='R') resetAll();
+  if(e.key==='v'||e.key==='V') toggleVis();
+  if(e.key==='p'||e.key==='P') togglePrac();
+  if(e.key==='z'||e.key==='Z') {if(zenOn) exitZen(); else enterZen();}
+  if(e.key==='f'||e.key==='F') toggleFull();
+  if(e.key==='s'||e.key==='S') toggleSettings();
+  if(e.key==='Escape') { if(zenOn) exitZen(); }
+});
+
+/* ═══════════════════════════════════════════════
+   RESIZE / ORIENTATION
+   ═══════════════════════════════════════════════ */
+var _rt=null;
+window.addEventListener('resize',function(){
+  clearTimeout(_rt);
+  _rt=setTimeout(function(){
+    var Ln=JSON.stringify(getLayout());
+    if(Ln!==builtLayout){build(); renderAll();}
+    if(zenOn){var Lz=JSON.stringify(getLayout(window.innerWidth));if(Lz!==zenBuilt){buildZen();} for(var r=0;r<RODS;r++) renderRod('zenRstrip',r,getLayout(window.innerWidth)); updDisp();}
+  },120);
+});
+window.addEventListener('orientationchange',function(){
+  clearTimeout(_rt);
+  _rt=setTimeout(function(){build();if(zenOn)buildZen();renderAll();},350);
+});
+
+/* ═══════════════════════════════════════════════
+   STARTUP
+   ═══════════════════════════════════════════════ */
+window.addEventListener('load',function(){
+  ST=[];
+  for(var r=0;r<RODS;r++) ST.push({upper:0,lower:0});
+  build(); renderAll();
+  setTheme('classic'); // init preview strip
+  setUnitMode('decimal'); // init unit mode
+  toast('Welcome to PSAVI Abacus Tool v10.0! Tap any bead.');
+});
+</script>
+</body>
+</html>

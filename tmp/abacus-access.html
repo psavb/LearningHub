@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abacus Tool — Student Access | PS AVB Learning Hub</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    h1,h2,h3 { font-family: 'Poppins', sans-serif; }
+
+    .hero-bg {
+      background: linear-gradient(135deg, #0f2557 0%, #1e40af 50%, #0f2557 100%);
+    }
+
+    /* shake animation on wrong code */
+    @keyframes shake {
+      0%,100% { transform: translateX(0); }
+      20%,60%  { transform: translateX(-8px); }
+      40%,80%  { transform: translateX(8px); }
+    }
+    .shake { animation: shake 0.4s ease; }
+
+    /* glow on focus */
+    .code-input:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(59,130,246,0.4);
+    }
+
+    @keyframes fadeUp {
+      from { opacity:0; transform:translateY(20px); }
+      to   { opacity:1; transform:translateY(0); }
+    }
+    .fade-up { animation: fadeUp 0.6s ease forwards; }
+  </style>
+</head>
+
+<body class="hero-bg min-h-screen flex items-center justify-center px-4 py-12">
+
+  <div class="w-full max-w-md fade-up">
+
+    <!-- Card -->
+    <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-3xl p-8 sm:p-10 shadow-2xl text-white text-center">
+
+      <!-- Logo / icon -->
+      <div class="w-20 h-20 rounded-2xl mx-auto mb-5 flex items-center justify-center shadow-lg" style="background: linear-gradient(135deg,#1e40af,#3b82f6);">
+        <i class="fas fa-calculator text-4xl text-white"></i>
+      </div>
+
+      <h1 class="text-2xl sm:text-3xl font-poppins font-extrabold mb-1">Student Abacus Tool</h1>
+      <p class="text-blue-200 text-sm mb-6">PS AVB Learning Hub — Enrolled Students Only</p>
+
+      <!-- Info box -->
+      <div class="bg-white/10 border border-white/20 rounded-xl px-4 py-3 mb-8 text-sm text-blue-100">
+        <i class="fas fa-info-circle text-blue-300 mr-1"></i>
+        Enter the <strong class="text-white">access code</strong> shared by your trainer after registration to open the interactive Abacus tool.
+      </div>
+
+      <!-- Access form -->
+      <div id="accessForm">
+        <div class="mb-4 text-left">
+          <label class="block text-sm font-semibold text-blue-200 mb-2 tracking-wide uppercase">
+            <i class="fas fa-lock mr-1"></i> Access Code
+          </label>
+          <input
+            type="password"
+            id="codeInput"
+            class="code-input w-full bg-white/10 border border-white/30 text-white placeholder-blue-300 rounded-xl px-4 py-3 text-lg font-semibold tracking-widest text-center transition-all duration-200"
+            placeholder="Enter your code"
+            maxlength="20"
+            autocomplete="off"
+            autocorrect="off"
+            autocapitalize="characters"
+            spellcheck="false"
+            onkeydown="if(event.key==='Enter') verifyCode()"
+          />
+          <p id="errorMsg" class="hidden mt-2 text-red-300 text-sm font-semibold text-center">
+            <i class="fas fa-times-circle mr-1"></i> Incorrect code. Please check with your trainer.
+          </p>
+        </div>
+
+        <button
+          onclick="verifyCode()"
+          class="w-full bg-orange-500 hover:bg-orange-400 active:bg-orange-600 text-white font-poppins font-bold text-base py-3.5 rounded-xl shadow-lg transition-colors mt-2">
+          <i class="fas fa-unlock mr-2"></i> Open Abacus Tool
+        </button>
+      </div>
+
+      <!-- Divider -->
+      <div class="border-t border-white/10 mt-8 pt-6">
+        <p class="text-xs text-blue-300">
+          Don't have a code? <a href="index.html#contact" class="text-white font-semibold underline underline-offset-2 hover:text-yellow-300 transition-colors">Enroll Now</a> to receive access.
+        </p>
+        <a href="index.html" class="inline-flex items-center gap-1.5 text-xs text-blue-400 hover:text-white mt-3 transition-colors">
+          <i class="fas fa-arrow-left text-xs"></i> Back to PS AVB Learning Hub
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Footer note -->
+    <p class="text-center text-blue-400 text-xs mt-6">
+      &copy; 2026 PS - AVB Learning Hub &nbsp;·&nbsp; For enrolled students only
+    </p>
+  </div>
+
+  <script>
+    // ─── Codes loaded from config/access-codes.json ─────────
+    var VALID_CODES = [];
+
+    fetch('config/access-codes.json')
+      .then(function(res) {
+        if (!res.ok) throw new Error('Config not found');
+        return res.json();
+      })
+      .then(function(data) {
+        VALID_CODES = (data.codes || []).map(function(c){ return c.toUpperCase(); });
+      })
+      .catch(function() {
+        // Silently fail — verifyCode will show error if codes empty
+        console.warn('Could not load access-codes.json');
+      });
+    // ────────────────────────────────────────────────────────
+
+    function verifyCode() {
+      var input = document.getElementById('codeInput');
+      var errMsg = document.getElementById('errorMsg');
+      var entered = input.value.trim().toUpperCase();
+
+      if (VALID_CODES.indexOf(entered) !== -1) {
+        // Correct — store in sessionStorage and redirect
+        sessionStorage.setItem('psavb_abacus_access', 'granted');
+        input.style.borderColor = '#22c55e';
+        input.style.color = '#bbf7d0';
+        setTimeout(function(){
+          window.location.href = 'PSAVB-Abacus-v10.0-CLEAN.html';
+        }, 400);
+      } else {
+        // Wrong — shake + show error
+        errMsg.classList.remove('hidden');
+        var form = document.getElementById('accessForm');
+        form.classList.add('shake');
+        input.style.borderColor = '#f87171';
+        setTimeout(function(){ form.classList.remove('shake'); }, 500);
+        input.value = '';
+        input.focus();
+      }
+    }
+
+    // Auto-focus input on load
+    window.addEventListener('DOMContentLoaded', function(){
+      document.getElementById('codeInput').focus();
+    });
+  </script>
+</body>
+</html>
